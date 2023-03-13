@@ -1,65 +1,59 @@
-{% extends  'base.html' %}
+{% extends 'base.html' %}
 {% load static %}
-{% block css %}
-	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="{% static 'user-dashboard/css/style.css' %}?ver=101">
-
-    <style>
-.header-banner {
-  background-image: url("{% static 'images/bg/trading-1.jpg' %}");
-
-}
-
-#statistics{
-    background-image: url("{% static 'images/bg/bg30.jpg' %}") ;
-  
-}
-
-#features{
-    background-image: url("{% static 'images/bg/bg-a.jpg' %}") ;
-   color :white;
-}
 
 
 
 
-
-
-
-
-    </style>
-
-{% endblock %}
-
-{% block content %}
+{% block header_banner %}
 <!-- Banner @s -->
+<div class="header-banner bg-theme-dark">
+    <div class="nk-banner">
+        <div class="banner banner-mask-fix banner-fs banner-single tc-light">
+            <div class="banner-wrap">
+                <div class="container">
+                    <div class="row align-items-center justify-content-center gutter-vr-30px">
+                        <div class="col-lg-6 order-lg-last">
+                            <div class="banner-gfx banner-gfx-re-s3 animated" data-animate="fadeInUp" data-delay="1.25">
+                                <img src="{% static 'images/dark/gfx-d-dark.png' %}" alt="header">
+                                <img class="banner-gfx-icon banner-gfx-icon-1"
+                                    src="{% static 'images/icons/icon-etheruem.png' %}" alt="">
+                                <img class="banner-gfx-icon banner-gfx-icon-2"
+                                    src="{% static 'images/icons/icon-bitcoin.png' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="banner-caption wide-auto text-center text-lg-left">
+                                <div class="cpn-head mt-0">
+                                    <h1 class="title title-xl-2 title-semibold animated" data-animate="fadeInUp"
+                                        data-delay="1.35">
+                                        World #1 Blockchain Liquidity Provider &amp; Brokerage</h1>
+                                </div>
+                                <div class="cpn-text cpn-text-s1">
+                                    <p class="lead animated" data-animate="fadeInUp" data-delay="1.45">
+                                        We provide an insured strategy to leverage market volatility in the blockchain
+                                        network
+                                    </p>
+                                </div>
+                                <div class="cpn-btns">
+                                    <ul class="btn-grp animated" data-animate="fadeInUp" data-delay="1.55">
+                                        <li><a href="{% url 'register' %}" class="btn btn-md btn-grad btn-round">
+                                                Sign up to
+                                                join
+                                            </a></li>
+                                        <li>
+                                            {% if user.is_authenticated %}
+                                            <a href="{% url 'dashboard' %}"
+                                                class="btn btn-md btn-grad btn-grad-alternet btn-round">
+                                                Login to access account</a>
+                                            {% else %}
+                                            <a href="{% url 'login' %}"
+                                                class="btn btn-md btn-grad btn-grad-alternet btn-round">
+                                                Login to access account</a>
+                                            {% endif %}
+                                        </li>
+                                    </ul>
+                                </div>
 
-<div class="header-banner bg-theme-gra" style="">
-   
-    <div class="nk-banner overlay" style="height: 63vh;">
-
-        <div class="banner banner-fs banner-single tc-light">
-            <div class="banner-wrap"> 
-                <div class="container" >
-                    <div class="row align-items-center justify-content-center py-0" >
-  
-                        <div class="col-lg-12 col-sm-12 text-center text-lg-left" style="z-index: 200;">
-                            <div class="banner-caption cpn tc-light">
-                                <div class="cpn-head">
-                                    <h1 class="title animated" data-animate="fadeInUp" data-delay="1">World #1 Crypto Investment <br class="d-none d-md-block"> & Staking Platform</h1>
-                                </div>
-                                <div class="cpn-text">
-                                    <p class="animated" data-animate="fadeInUp" data-delay="1.1">We offer high liquidity, low risk, good ROI on investments through  a data-informed asset trading and staking process.</p>
-                                </div>
-                               
-                                <div class="cpn-action">
-                              
-                                    {% if user.is_authenticated %}
-                                    <a href="{% url 'dashboard' %}" class="btn btn-grad p-2">Dashboard</a>
-                                    {% else %}
-                                    <a href="{% url 'login' %}" class="btn btn-grad p-2">Login/Register</a>
-                                    {% endif %}
-                                </div>
                             </div>
                         </div><!-- .col -->
                     </div><!-- .row -->
@@ -67,487 +61,551 @@
             </div>
         </div>
     </div><!-- .nk-banner -->
-    
-    
+    <div>
+
+    </div>
+
+
+    <div
+        style="height:100px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 20px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;">
+        <div style="height:60px; padding:0px; margin:0px; width: 100%;">
+            <iframe
+                src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover="
+                width="100%" height="45px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0"
+                style="border:0;margin:0;padding:0;font-size: 20px;">
+            </iframe>
+        </div>
+        <div
+            style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
+            <a href="#" target="_blank"
+                style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Live cryptocurrency
+                Prices</a>
+
+        </div>
+    </div>
+
+
+
+
+    <div class="nk-ovm mask-c-dark shape-v mask-contain-bottom"></div>
+
     <!-- Place Particle Js -->
-    <div id="particles-bg" class="particles-container particles-bg"></div>
+    <div id="particles-bg" class="particles-container particles-bg" data-pt-base="#00c0fa" data-pt-base-op=".3"
+        data-pt-line="#2b56f5" data-pt-line-op=".5" data-pt-shape="#00c0fa" data-pt-shape-op=".2"></div>
 </div>
 <!-- .header-banner @e -->
-<main class="nk-pages">
-    
-    <div style="height:100px; background-color: #FFFFFF; overflow:hidden; box-sizing: border-box; border: 1px solid #56667F; border-radius: 4px; text-align: right; line-height:14px; block-size:62px; font-size: 20px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #56667F;padding:1px;padding: 0px; margin: 0px; width: 100%;">
-        <div style="height:60px; padding:0px; margin:0px; width: 100%;">
-        <iframe src="https://widget.coinlib.io/widget?type=horizontal_v2&theme=light&pref_coin_id=1505&invert_hover=" width="100%" height="45px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;font-size: 20px;">
-        </iframe>
-    </div>
-    <div style="color: #FFFFFF; line-height: 14px; font-weight: 400; font-size: 11px; box-sizing: border-box; padding: 2px 6px; width: 100%; font-family: Verdana, Tahoma, Arial, sans-serif;">
-        <a href="#" target="_blank" style="font-weight: 500; color: #FFFFFF; text-decoration:none; font-size:11px">Live cryptocurrency Prices</a>
-   
-    </div>
-    </div>
+{% endblock %}
 
-    <!-- // -->
-    <section class="section bg-light section-about pt-3" id="about" style="">
 
+
+
+
+
+{% block content %}
+
+<main class="nk-pages mt-0 pt-0">
+    <section class="section mask-c-blend-dark bg-theme-dark-alt tc-light ov-h" id="ico">
         <div class="container">
             <!-- Block @s -->
-            <div class="nk-block nk-block-about">
-                <div class="row gutter-vr-30px align-items-center pdb-l">
-                    <div class="col-lg-6">
-                        <div class="nk-block-text">
-                            <h2 class="title animated" data-animate="fadeInUp" data-delay=".1">Creating the trading trends</h2>
-                            <p class="animated" data-animate="fadeInUp" data-delay=".2"><strong>Welcome to {{site_name}} ltd.</strong> Trade and invest in top cryptos & Global assets. Trade Bitcoin, Ethereum, Litecoin, USDT, Binance Smart Chain(BNB), NFT's, Indices and Commodities via CFDs. Investing in the financial markets has never been easier.</p>
-                            <!--p class="animated" data-animate="fadeInUp" data-delay=".3">{{site_name}}  sectetur adipiscing elit, sed do eiusmod tempor incididunt uteop labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercit ullamco laboris nisi commodo consequat.</p>
-                            <p class="animated" data-animate="fadeInUp" data-delay=".4">We create cryptocurrency dipiscing elit, sed do eiusmod tempor incididunt uteop labore et dolore magna aliqua. Ut enim ad minim veniam, nostrud exercit ullamco laboris nisi commodo consequat.</p-->
+            <div class="nk-block nk-block-text-wrap">
+                <div class="row align-items-center justify-content-center justify-content-md-between gutter-vr-30px">
+                    <div class="col-mb-9 col-sm-7 col-md-6 col-lg-5 order-md-last">
+                        <div class="nk-block-img animated" data-animate="fadeInUp" data-delay=".1">
+                            <img src="{% static 'images/screens/trading-screens.png' %}"
+                                style="height: 220px;width:100%">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-sm-10 col-md-6 text-center text-md-left">
                         <div class="nk-block-text">
-                            <h2 class="title animated" data-animate="fadeInUp" data-delay=".1">Who we are ?</h2>
-                            <p class="animated" data-animate="fadeInUp" data-delay=".2">
-                                <strong>{{site_name}} ltd.</strong> is a world renowned blockchain and digital asset investment company, deploying cutting edge trading algorithms and engines in high yield cryptocurrency trading  by leveraging liquidity pools made available by it's investors. backed and regulated by the Poland Security & Exchange Commision.
+                            <h2 class="title animated" data-animate="fadeInUp" data-delay=".2">
+                                We’ve built a platform
+                                <br> for enhanced crypto trading
+                            </h2>
+                            <p class="lead animated" data-animate="fadeInUp" data-delay=".3">
+                                Our platform leverages cutting-edge
+                                AI-based trading algorithms to provide liguidity pool and blockchain trading brokerage
+                                for our users.
                             </p>
-                           
-                        </div>
-                    </div>
-                    <!--div class="col-lg-6">
-                        <div class="nk-block-video animated" data-animate="fadeInUp" data-delay=".5">
-                            <img src="images/video/a.png" alt="video">
-                            <a href="https://www.youtube.com/watch?v=SSo_EIwHSd4" class="nk-block-video-play video-popup btn-play btn-play-light"><em class="fas fa-play"></em></a>
-                        </div>
-                    </div-->
-                </div>
-            </div><!-- .block @e -->
-            <!-- Section Head @s -->
-          
 
-    </section>
-    <!-- // -->
-   
-   
-    <section class="section section-solution bg-light  overlay p-0" id="features">
-
-    <div class="container overlay pt-3">
-        <!-- Section Head @s -->
-        <div class="section-head text-center wide-auto-sm">
-            <h2 class="title animated" data-animate="fadeInUp" data-delay=".1" style="color: #B9D2F4;">Features</h2>
-            <p class="animated white" data-animate="fadeInUp" data-delay=".2" style="color: white;">We are dedicated to breaking the blockchain divide. our vision is to bring blockchain investment to your doorsteps, by making it easy and secured for everyone to get involved.</p>
-        </div><!-- .section-head @e -->
-        <!-- Block @s -->
-        <div class="nk-block nk-block-features-s3">
-            <div class="row gutter-vr-40px justify-content-center">
-                <div class="col-lg-6 col-md-10">
-                    <div class="feature feature-s3 feature-center animated" data-animate="fadeInUp" data-delay=".3">
-                        <div class="feature-icon feature-icon-lg">
-                            <em style="color: #B9D2F4;" class="icon icon-lg ikon ikon-cloud"></em>
-                        </div>
-                        <div class="feature-text" >
-                            <h4 class="title title-md title-light " style="color: #B9D2F4;">Ease Of Use:</h4>
-                            <p style="color: white;">Investing in blockchain has never been this easy, we simplified the complexities encountered in cryptocurrency and digital asset investment.</p>
                         </div>
                     </div>
-                </div><!-- .col -->
-                <div class="col-lg-6 col-md-10">
-                    <div class="feature feature-s3 feature-center animated" data-animate="fadeInUp" data-delay=".4">
-                        <div class="feature-icon feature-icon-lg">
-                            <em class="icon icon-lg ikon ikon-safety" style="color: #B9D2F4;"></em>
-                        </div>
-                        <div class="feature-text">
-                            <h4 class="title title-md title-dark" style="color: #B9D2F4;"> Trading Experience</h4>
-                            <p style="color: white;">We focus only on investing in blockchain technologies. Our team has experience in both traditional financing and emerging blockchain technology.  Making sure our clients can operate safely and calmly is a top priority. We are constantly adding new offerings that will give you a better, more diverse investment experience, accessible from anywhere and on any device.</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-lg-6 col-md-10">
-                    <div class="feature feature-s3 feature-center animated" data-animate="fadeInUp" data-delay=".5">
-                        <div class="feature-icon feature-icon-lg">
-                            <em class="icon icon-lg ikon ikon-cash" style="color: #B9D2F4;"></em>
-                        </div>
-                        <div class="feature-text">
-                            <h4 class="title title-md title-dark" style="color: #B9D2F4;"> Withdrawal Options</h4>
-                            <p style="color: white;">We provide varoius withdrawal options for you to choose from. we always prioritise your convenience</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-                <div class="col-lg-6 col-md-10">
-                    <div class="feature feature-s3 feature-center animated" data-animate="fadeInUp" data-delay=".6">
-                        <div class="feature-icon feature-icon-lg">
-                            <em class="icon icon-lg ikon ikon-globe" style="color: #B9D2F4;"></em>
-                        </div>
-                        <div class="feature-text">
-                            <h4 class="title title-md title-dark" style="color: #B9D2F4;">Unrivalled Security</h4>
-                            <p style="color: white;">Your assets and accounts are highly secured, our insurance policy protects your assets in the case of any bridge. our ultra modern infrastructures makes sure the former never happens.</p>
-                        </div>
-                    </div>
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div><!-- .block @e -->
-    </div>
-
-</section>
-<!-- // -->
-    <!-- // -->
-    <section class="section section-problem bg-light" id="investment-plan">
-
-        <div class="container">
-            <!-- Section Head @s -->
-            <div class="section-head text-center wide-auto-sm">
-                <h2 class="title animated" data-animate="fadeInUp" data-delay=".1">Investment Plans</h2>
-                <p class="animated" data-animate="fadeInUp" data-delay=".2">Yes!, everyone can now invest in cryptocurrency and blockchain.</p>
-            </div><!-- .section-head @e -->
-            <!-- Block @s -->
-            <div class="nk-block nk-block-problems tc-light">
-                <div class="row">
-                    
-                {% for plan in plans %}
-                <div class="col-lg-4">
-                <div class="token-card">
-                    <div class="token-info">
-                        <span class="token-smartag">{{plan.name}}</span>
-                        <h2 class="token-bonus">{{plan.interest_rate}}% <span>Interest</span></h2>
-                        <ul class="token-timeline">
-                            <li><span>DURATION</span>{{plan.duration_verbose}} </li>
-                            <li><span>RANGE</span>${{plan.min_cost}} - ${{plan.max_cost|default:" unlimited"}}</li>
-                            
-                        </ul>
-                    </div>
-                    <div  style="border:2px solid #6783b8;width: 100%;background-color: white;height: fit-content;" class="text-center p-0" data-delay=".4">
-                    
-                        <a href="{% url 'invest' plan.slug %}" class="btn " style="color: black;border: 0px;" >select plan</a>
-                
-                    </div>
-                
-                </div><!-- .token-card -->
-                </div>
-                {% endfor %}
-    </div><!-- .user-panel -->
-                    
                 </div><!-- .row -->
             </div><!-- .block @e -->
         </div>
-
-    </section>
- 
-    <section class="section section-product bg-white" id="products">
-
-        <div class="container">
-            <!-- Block @s -->
-            <div class="nk-block nk-block-features-s4 mgb-m30">
-                <div class="row">
-                    <div class="col-lg-3">
-                        <div class="section-head">
-                            <h2 class="title animated" data-animate="fadeInUp" data-delay=".1">Our Products</h2>
-                            <p class="animated" data-animate="fadeInUp" data-delay=".2">We have simplified asset management. You can easily monitor the state of your investments and assets easily on your custom dashoard. Deposit, withdrawal and investments all in one place.</p>
-                        </div>
-                    </div><!-- .col -->
-                    <div class="col-lg-3 col-xlg-3  mb-4 mb-lg-0">
-                        <div class="nk-block-img bg-pattern-dots-color">
-                            <div class="app-slide-wrap animated" data-animate="fadeInUp" data-delay=".1">
-                                <div class="app-slide">
-                                    <img src="{% static 'images/app-screens/a.jpg' %}">
-                                </div>
-    
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6  col-xlg-6  col-12 pl-5">
-                        <a href="#" class="feature feature-s4 feature-center animated" data-animate="fadeInUp" data-delay=".4">
-                            <div class="feature-img">
-                                <img src="{% static 'images/products/b.jpg' %}" alt="product">
-                            </div>
-                            <h5 class="title title-sm title-dark">Desktop View</h5>
-                        </a>
-                    </div><!-- .col -->
-                </div><!-- .row -->
-            </div><!-- .block @e -->
-        </div>
-
     </section>
     <!-- // -->
-    <section class="bg-theme bg-pattern-dots overlay" id="statistics">
-        <div class="row">
-            <div class="col-12 col-lg-6 col-md-6">
-                <div class="section section-tokensale tc-ligh overlay">
-
-                    <div class="container">
+    <section class="section bg-theme-dark-alt tc-light py-0 ov-h">
+        <div class="container">
+            <!-- Block @s -->
+            <div class="nk-block nk-block-features-2">
+                <div class="row align-items-center gutter-vr-30px justify-content-center justify-content-md-between">
+                    <div class="col-mb-9 col-sm-7 col-md-6 col-lg-5">
+                        <div class="gfx py-4 animated" data-animate="fadeInUp" data-delay=".1">
+                            <img src="{% static 'images/light/gfx-z-b.png' %}" alt="gfx">
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-sm-10 col-md-6 text-center text-md-left">
                         <!-- Section Head @s -->
-                        <div class="banner-caption cpn tc-light">
-                            <div class="cpn-head">
-                                <h1 class="title animated" data-animate="fadeInUp" data-delay=".1">{{site_name}} Statistics</h1>
-                            </div>
-                            <div class="cpn-text">
-                                <p class="animated" data-animate="fadeInUp" data-delay=".2">We appretiate the decentralization and transparency of blockchain technology, that is why our portfolio is always made public. so you know where we are putting your money</p>
-                            </div>
+                        <div class="nk-block-text">
+                            <h4 class="title title-lg animated" data-animate="fadeInUp" data-delay=".2">
+                                Who We Are
+                            </h4>
+                            <p class="lead animated" data-animate="fadeInUp" data-delay=".3">
+                                Welcome to {{site_name}}, We are a cutting-edge crypto trading and staking platform
+                                designed to provide you with
+                                the best tools and features for managing your digital assets.
+                            </p>
+                            <p class="animated" data-animate="fadeInUp" data-delay=".4">
+                                At our core, we are a team of experienced crypto enthusiasts with a passion for
+                                technology and finance. We believe that everyone should have access to the benefits of
+                                decentralized finance, and we are dedicated to making it easy and intuitive for you to
+                                trade, stake, and earn with cryptocurrencies.
+                            </p>
+                            <p class="animated" data-animate="fadeInUp" data-delay=".5">
+                                We believe that education is key to making informed investment
+                                decisions, and we offer a wealth of resources and educational materials to help you stay
+                                informed and up-to-date.
+                            </p>
+                            <p class="animated" data-animate="fadeInUp" data-delay=".6">
+                                With our cutting-edge technology and dedication to excellence, we are confident that our
+                                platform is the best choice for all your crypto trading and staking needs. Join us today
+                                and start experiencing the future of finance!
+                            </p>
                         </div>
-        
-                        <!-- Block @s -->
-                        <div class="nk-block nk-block-token mgb-m30 " >
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <div class="token-info bg-theme animated" data-animate="fadeInUp" data-delay=".3">
-                                        <h4 class="title title-md mb-2 text-sm-center" style="color:white">Real time portfolio data</h4>
-                                        <table class="table table-oken" >
-                                            <tbody>
-                                                <tr style="">
-                                                    <td class="table-head col-white" style="color:white">Token Projects</td>
-                                                    <td class="table-des col-white" style="color:white">$2,453,450.45</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="table-head col-white" style="color:white">Exchange</td>
-                                                    <td class="table-des col-white" style="color:white">$1,345,764.70</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="table-head col-white" style="color:white">Farming & Staking</td>
-                                                    <td class="table-des col-white" style="color:white">$3,566,864.02</td>                                        </tr>
-                                                <tr>
-                                                    <td class="table-head col-white" style="color:white">Lending</td>
-                                                    <td class="table-des col-white" style="color:white">$2,094,673.12</td>
-                                                </tr>
-                                              
-                                              
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div><!-- .col -->
-                                <div class="col-lg-5">
-                                
-                                </div><!-- .col -->
-                            </div><!-- .row -->
-                        </div><!-- .block @e -->
                     </div>
-        
-                </div><!-- .section-tokensale -->
-
-            </div>
-            <div class="col-12 col-lg-6 col-md-6 " style="background-color: white;">
-                <center>
-                    <br>
-                    <p>
-                        <i>We are insured by the Poland Securities and Exchange Commision and Limited by shares only
-                            </i>
-                        </p>
-                    <img src="{% static 'images/certificate.jpeg' %}" style="width:80%;">
-                </center>
-                
-            </div>
+                </div><!-- .row -->
+            </div><!-- .block @e -->
         </div>
-    
-
-        <div class="section-tokendes">
-
-            
-            <div class="nk-ovm ovm-bottom ovm-h-70 bg-light"></div><!-- .nk-ovm -->
-        </div><!-- .section-tokendes -->
     </section>
     <!-- // -->
-    
-    
-    <!-- // ->
-   
-    <section class="section section-roadmap bg-white py-2" id="roadmap">
 
+    <!-- // -->
+    <section class="section bg-dark " id="why">
+        <div class="background-shape bs-reverse"></div>
         <div class="container">
-            <!-- Section Head @s ->
-            <div class="section-head text-center wide-auto">
-                <h6 class="title title-xs title-light animated" data-animate="fadeInUp" data-delay=".1">The roadmap to success</h6>
-                <h2 class="title title-lg title-dark animated" data-animate="fadeInUp" data-delay=".2">What are our major goals?</h2>
-                <p class="animated" data-animate="fadeInUp" data-delay=".3">Our market strategy will prioritise blockchain technology rollout to utilities based on their transformation. View our roadmap to see how exactly we are making that happen. </p>
-            </div><!-- .section-head @e -->
-            <!-- Block @s ->
-            <div class="nk-block nk-block-roadmap">
-                <div class="row justify-content-center">
-                    <div class="col-xl-10">
-                        <div class="roadmap-wrap">
-                            <div class="roadmap-line"></div>
-                            <div class="roadmap animated" data-animate="fadeInUp" data-delay=".4">
-                           
+            <div class="section-head wide-sm text-center">
+                <h2 class="title animated text-light" data-animate="fadeInUp" data-delay=".1">
+                    Our <strong>Best</strong> Features
+                </h2>
+                <p class="animated text-light" data-animate="fadeInUp" data-delay=".2">
+                    We are dedicated to breaking the blockchain divide. our vision is to bring blockchain investment to
+                    your finger tips, by making it easy and secured for everyone to get involved.
+                </p>
+            </div>
+            <!-- Block @s -->
+            <div class="nk-block">
+                <div class="row gutter-vr-40px justify-content-center">
+                    <div class="col-lg-4 col-md-4">
+                        <div class="feature feature-s8 feature-s8-alt feature-center card card-full-lg card-md animated"
+                            data-animate="fadeInUp" data-delay=".4">
+                            <div class="feature-icon feature-icon-lg feature-icon-lg-s2">
+                                <img src="{% static 'images/icons/icon-h.png' %}" alt="feature">
                             </div>
-                            <div class="roadmap roadmap-right roadmap-finished animated" data-animate="fadeInUp" data-delay=".5">
-                                <div class="roadmap-step">
-                                    <div class="roadmap-head">
-                                        <span class="roadmap-time">March 2018</span>
-                                        <span class="roadmap-title">Concept development</span>
-                                    </div>
-                                    <p>Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text.</p>
-                                </div>
-                            </div>
-                            <div class="roadmap roadmap-left roadmap-finished animated" data-animate="fadeInUp" data-delay=".6">
-                                <div class="roadmap-step">
-                                    <div class="roadmap-head">
-                                        <span class="roadmap-time">Q3 &amp; Q4 2018</span>
-                                        <span class="roadmap-title">Website and Whitepaper</span>
-                                    </div>
-                                    <ul class="list list-dot">
-                                        <li>MVP of wallet prototype released</li>
-                                        <li>Pre-Sale ICO Starts</li>
-                                        <li>Redesign of website goes live</li>
-                                        <li>Version 2 of Whitepaper released</li>
-                                        <li>Version 3 of Onepager released</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="roadmap animated" data-animate="fadeInUp" data-delay=".4">
-                              
-                            </div>
-                            <div class="roadmap roadmap-right animated" data-animate="fadeInUp" data-delay=".5">
-                                <div class="roadmap-step">
-                                    <div class="roadmap-head">
-                                        <span class="roadmap-time">Q1 2019</span>
-                                        <span class="roadmap-title">Public Token Sale Begins</span>
-                                    </div>
-                                    <p>Public ICO launch and crowd-sale starts - 5th Januray &amp; Token distribution will commence - 2nd March.</p>
-                                </div>
-                            </div>
-                            <div class="roadmap roadmap-left animated" data-animate="fadeInUp" data-delay=".6">
-                                <div class="roadmap-step">
-                                    <div class="roadmap-head">
-                                        <span class="roadmap-time">Q2 2019</span>
-                                        <span class="roadmap-title">Beta App User Testing</span>
-                                    </div>
-                                    <p>Release our first apps for beta testing to our members comunity</p>
-                                </div>
+                            <div class="feature-text feature-text-s8">
+                                <h4 class="title title-sm title-thin title-s5"><span>Ease To Use
+                                    </span><span>Simple &amp; Robust</span></h4>
+                                <p> We have simplified the complexities
+                                    encountered in cryptocurrency and digital asset investment.</p>
+                                <a href="#" class="link link-primary link-feature-s1"><em
+                                        class="link-icon icon-circle icon-circle-md ti ti-arrow-right"></em></a>
                             </div>
                         </div>
-                    </div><!-- .col ->
-                </div><!-- .row ->
-               
-            </div>
-            <!-- Block @e ->
+                    </div><!-- .col -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="feature feature-s8 feature-s8-alt feature-center card card-full-lg card-md animated"
+                            data-animate="fadeInUp" data-delay=".5">
+                            <div class="feature-icon feature-icon-lg feature-icon-lg-s2">
+                                <img src="{% static 'images/icons/icon-i.png' %}" alt="feature">
+                            </div>
+                            <div class="feature-text feature-text-s8">
+                                <h4 class="title title-sm title-thin title-s5"><span>Excellent Trading Experience
+                                    </span><span>We are better than the rest</span></h4>
+                                <p> We are constantly adding
+                                    new offerings that will give you a better, more diverse investment experience,
+                                    accessible from anywhere and on any device.</p>
+                                <a href="#" class="link link-primary link-feature-s1"><em
+                                        class="link-icon icon-circle icon-circle-md ti ti-arrow-right"></em></a>
+                            </div>
+                        </div>
+                    </div><!-- .col -->
+                    <div class="col-lg-4 col-md-4">
+                        <div class="feature feature-s8 feature-s8-alt feature-center card card-full-lg card-md animated"
+                            data-animate="fadeInUp" data-delay=".6">
+                            <div class="feature-icon feature-icon-lg feature-icon-lg-s2">
+                                <img src="{% static 'images/icons/icon-j.png' %}" alt="feature">
+                            </div>
+                            <div class="feature-text feature-text-s8">
+                                <h4 class="title title-sm title-thin title-s5"><span>Withdrawal Options
+                                    </span><span>Different ways you can easily get your dividends</span></h4>
+                                <p>We provide varoius withdrawal options for you to choose from. we always prioritise your convenience</p>
+                                <a href="#" class="link link-primary link-feature-s1"><em
+                                        class="link-icon icon-circle icon-circle-md ti ti-arrow-right"></em></a>
+                            </div>
+                        </div>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+                <div class="d-flex justify-content-center pdt-r">
+                    <ul class="btn-grp animated" data-animate="fadeInUp" data-delay=".7">
+                        <li><a href="{% url 'register' %}" class="btn btn-md btn-grad">Get a Wallet</a></li>
+                        <li><a href="#0" class="btn btn-md btn-outline btn-grad on-bg-light">Download Whitepaper</a></li>
+                    </ul>
+                </div>
+            </div><!-- .block @e -->
         </div>
-
     </section>
-    <!-- // ->
-    <section class="section section-team bg-light" id="team">
+    <!-- // -->
+
+
+    <!-- // -->
+    <section class="section ov-h bg-theme-dark-alt tc-light ">
 
         <div class="container">
-            <!-- Block @s ->
-            <div class="nk-block nk-block-team-featured team-featured">
-                <div class="row align-items-center">
-                    
-                    <div class="col-lg-12">
-                        <div class="team-featured-cont">
-                            <h6 class="title title-xs title-light animated" data-animate="fadeInUp" data-delay=".2">behind the idea</h6>
-                            <h2 class="title title-lg title-dark animated" data-animate="fadeInUp" data-delay=".3">The Core Team</h2>
-                            <p class="animated" data-animate="fadeInUp" data-delay=".4">ICOx Crypto is founded by David Metthew who is young entrepreneur &amp; full stack-developer. He is totam rem aperiam, et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit. Quam nihil molestiae illum.</p>
+            <div class="section-head wide-sm text-center">
+                <h2 class="title animated" data-animate="fadeInUp" data-delay=".1">Robust
+                    <strong>Global</strong> coverage
+                </h2>
+                <p class="animated" data-animate="fadeInUp" data-delay=".2">
+                    We operate a strong global community of crypto enthusiasts providing liquidity that optmizes our
+                    trading and investment processes
+                </p>
+
+            </div>
+            <div class="nk-block nk-block-payment">
+                <div class="payment-holder">
+                    <div class="nk-block-img text-center d-none d-lg-block animated" data-animate="fadeIn"
+                        data-delay=".2">
+                        <img src="{% static 'images/map-bg.png' %}" alt="">
+                    </div>
+                    <div class="payment-holder-list">
+                        <div class="payment-holder-single animated" data-animate="fadeInDown" data-delay=".2">
+                            <div class="payment-holder-info payment-info-card">
+                                <h4 class="title title-pcard text-theme-alt"><a class="text-primary" href="#">Alex
+                                        Martin</a></h4>
+                                <p>Received 200 ETH from <span class="text-theme-alt">John Smith</span></p>
+                            </div>
+                            <div class="payment-holder-thumb">
+                                <img src="{% static 'images/payment/p-holder-one.png' %}" alt="payment">
+                            </div>
+                        </div>
+                        <div class="payment-holder-single animated" data-animate="fadeInDown" data-delay=".2">
+                            <div class="payment-holder-info payment-info-card">
+                                <h4 class="title title-pcard"><a class="text-primary" href="#">Bruce Sloan</a></h4>
+                                <p>Send 200 BTC to <span class="text-theme-alt">Frank Bullock</span></p>
+                            </div>
+                            <div class="payment-holder-thumb">
+                                <img src="{% static 'images/payment/p-holder-two.png' %}" alt="payment">
+                            </div>
+                        </div>
+                        <div class="payment-holder-single animated" data-animate="fadeInDown" data-delay=".3">
+                            <div class="payment-holder-info payment-info-card">
+                                <h4 class="title title-pcard"><a href="#" class="text-primary">John Smith</a></h4>
+                                <p>Send 200 ETH to <span class="text-theme-alt">Alex Martin</span></p>
+                            </div>
+                            <div class="payment-holder-thumb">
+                                <img src="{% static 'images/payment/p-holder-three.png' %}" alt="payment">
+                            </div>
+                        </div>
+                        <div class="payment-holder-single animated" data-animate="fadeInDown" data-delay=".4">
+                            <div class="payment-holder-info payment-info-card">
+                                <h4 class="title title-pcard"><a class="text-primary" href="#">Frank Bullock</a></h4>
+                                <p>Received 200 BTC from <span class="text-theme-alt">Bruce Sloan</span></p>
+                            </div>
+                            <div class="payment-holder-thumb">
+                                <img src="{% static 'images/payment/p-holder-four.png' %}" alt="payment">
+                            </div>
                         </div>
                     </div>
-                </div><!-- .row ->
+                </div>
             </div>
-            <!-- Block @e ->
-        </div->
-
+        </div>
     </section>
-    <!-- // ->
-    <section class="section section-team bg-light pt-0" id="team-members">
+    <!-- // -->
 
+    <section class="section bg-theme-dark-alt tc-light">
         <div class="container">
-            <!-- Section Head @s ->
-     
-            <!-- Block @s ->
-            <div class="nk-block nk-block-team-list">
+            <div class="section-head text-center wide-auto-sm tc-light">
+                <div class="section-head-line">
+                    <span class="line-1"></span><span class="line-2"></span><span class="line-3"></span><span
+                        class="line-4"></span>
+                    <span class="line-5"></span><span class="line-6"></span><span class="line-7"></span><span
+                        class="line-8"></span>
+                </div>
+                <h2 class="title title-s4 animated" data-animate="fadeInUp" data-delay=".1" title="WEB PLATFORM">
+                    Our Trading Platform
+                </h2>
+                <p class="animated" data-animate="fadeInUp" data-delay=".2">Whether you are a seasoned blockchain
+                    investor or just
+                    getting started, our platform interface has everything you need to succeed.</p>
+            </div>
+            <!-- Block @s -->
+            <div class="nk-block nk-block-text-wrap">
+                <div class="row align-items-center justify-content-center justify-content-md-between gutter-vr-30px">
+                    <div class="col-mb-9 col-sm-7 col-md-6">
+                        <div class="nk-block-img animated" data-animate="fadeInUp" data-delay=".3">
+                            <img src="{% static 'images/screens/mobile-1.png' %}">
+                        </div>
+                    </div>
+                    <div class="col-sm-10 col-md-6 col-lg-5">
+                        <div class="nk-block-text ml-lg-3 ml-xl-0">
+                            <p class="animated" data-animate="fadeInUp" data-delay=".4">Our platform is designed to be
+                                user-friendly and secure, with advanced features and tools that enable you to manage
+                                your portfolio with ease. Whether you are new to the world of crypto or an experienced
+                                trader, we have everything you need to succeed.</p>
+                            <ul class="list list-dot pdb-r">
+                                <li class="animated" data-animate="fadeInUp" data-delay=".5">Portfolio Management</li>
+                                <li class="animated" data-animate="fadeInUp" data-delay=".55">Investments</li>
+                                <li class="animated" data-animate="fadeInUp" data-delay=".65">Wallet Deposits &
+                                    WItdrawals</li>
+                                <li class="animated" data-animate="fadeInUp" data-delay=".7">Professional Support</li>
+                                <li class="animated" data-animate="fadeInUp" data-delay=".75">Free to use
+                                </li>
+                            </ul>
+                            <ul class="btn-grp justify-content-center justify-content-md-start">
+                                <li class="animated" data-animate="fadeInUp" data-delay=".85"><a
+                                        href="{% url 'dashboard' %}" class="btn btn-grad btn-round btn-md">View
+                                        Dashboard </a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div><!-- .row -->
+            </div><!-- .block @e -->
+        </div>
+    </section>
+    <!-- // -->
+    <section class="section section-tokensale tc-light bg-theme-dark" id="statistics">
+        <!-- Block @s -->
+        <div class="container">
+            <div class="section-head text-center wide-auto-sm">
+                <h2 class="title title-s4 animated" data-animate="fadeInUp" data-delay=".1" title="STATS">Portfolio
+                    Statistics
+                </h2>
+                <p class="animated" data-animate="fadeInUp" data-delay=".2">We appretiate the
+                    decentralization and transparency of blockchain technology, that is why our
+                    portfolio is always made public. so you know where we are putting your money</p>
+            </div>
+            <div class="nk-block nk-block-token mgb-m30">
+                <div class="row align-items-center justify-content-between gutter-vr-50px">
+                    <div class="col-lg-6">
+                        <div class="row gutter-vr-30px">
+                            <div class="col-sm-6">
+                                <div class="stage-info animated" data-animate="fadeInUp" data-delay=".3">
+                                    <h6 class="title title-s6 title-xs-s2">Start</h6>
+                                    <p>Jan 4, 2023 (9:00AM GMT)</p>
+                                </div>
+                            </div><!-- .col  -->
+
+                            <div class="col-sm-6">
+                                <div class="stage-info animated" data-animate="fadeInUp" data-delay=".5">
+                                    <h6 class="title title-s6 title-xs-s2">End</h6>
+                                    <p>Jan 5, 2024 (12:00AM GMT)</p>
+                                </div>
+                            </div><!-- .col  -->
+                            <div class="col-sm-6">
+                                <div class="stage-info animated" data-animate="fadeInUp" data-delay=".6">
+                                    <h6 class="title title-s6 title-xs-s2">Token Projects &amp; ICO</h6>
+                                    <p>$2,453,450.45</p>
+                                </div>
+                            </div><!-- .col  -->
+                            <div class="col-sm-6">
+                                <div class="stage-info animated" data-animate="fadeInUp" data-delay=".7">
+                                    <h6 class="title title-s6 title-xs-s2">Exchange</h6>
+                                    <p>$1,345,764.70</p>
+                                </div>
+                            </div><!-- .col  -->
+                            <div class="col-sm-6">
+                                <div class="stage-info animated" data-animate="fadeInUp" data-delay=".8">
+                                    <h6 class="title title-s6 title-xs-s2">Farming &
+                                        Staking</h6>
+                                    <p>$3,566,864.02</p>
+                                </div>
+                            </div><!-- .col  -->
+                            <div class="col-sm-6">
+                                <div class="stage-info animated" data-animate="fadeInUp" data-delay=".8">
+                                    <h6 class="title title-s6 title-xs-s2">Lending</h6>
+                                    <p>$2,094,673.12</p>
+                                </div>
+                            </div><!-- .col  -->
+                        </div><!-- .row  -->
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="token-status token-status-s5 bg-theme-alt round no-bd animated"
+                            data-animate="fadeInUp" data-delay=".9">
+                            <div class="token-box token-box-s3">
+                                <div class="countdown-s3 countdown-s4 countdown" data-date="2021/08/10"></div>
+                            </div>
+                            <div class="token-action">
+                                <a class="btn btn-md btn-grad btn-grad-alternet btn-round"
+                                    href="{% url 'register' %}">Get On Board</a>
+                            </div>
+                            <ul class="icon-list">
+                                <li><em class="fab fa-bitcoin"></em></li>
+                                <li><em class="fab fa-ethereum"></em></li>
+                                <li><em class="fas fa-dollar-sign"></em></li>
+                                <li><em class="fab fa-cc-visa"></em></li>
+                                <li><em class="fab fa-cc-mastercard"></em></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .block @e -->
+            <div class="nk-block">
+                <div class="row justify-content-center gutter-vr-40px">
+                    <div class="col-md-6 col-mb-8">
+                        <div class="single-chart">
+                            <h3 class="mgb-l text-center title-lg animated" data-animate="fadeInUp" data-delay=".1">
+                                Distribution <br>of tokens</h3>
+                            <div class="chart animated" data-animate="fadeInUp" data-delay=".2">
+                                <img src="{% static 'images/dark/e-dark.png' %}" alt="chart">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-mb-8">
+                        <div class="single-chart">
+                            <h3 class="mgb-l text-center title-lg animated" data-animate="fadeInUp" data-delay=".3">Use
+                                <br>of proceeds
+                            </h3>
+                            <div class="chart animated" data-animate="fadeInUp" data-delay=".4">
+                                <img src="{% static 'images/dark/f-dark.png' %}" alt="chart">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .block @e -->
+        </div>
+    </section>
+
+    <section class="section bg-theme-dark tc-light ov-h pdb-0" id="top_investors">
+        <div class="container">
+            <div class="section-head text-center wide-auto-sm tc-light">
+                <h2 class="title title-s4 animated" data-animate="fadeInUp" data-delay=".1" title="team">
+                    Our Top Investors
+                </h2>
+                <p class="animated" data-animate="fadeInUp" data-delay=".2">The Cryptocurrency industry is one of the
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua.</p>
+            </div>
+            <!-- Block @s -->
+            <div class="nk-block nk-block-team-list team-list">
                 <div class="row justify-content-center">
-                    <div class="col-md-3 col-6">
-                        <div class="team animated" data-animate="fadeInUp" data-delay=".2">
-                            <div class="team-photo">
-                                <img src="{% static 'images/team/a.jpg' %}" alt="team">
-                                <a href="#team-popup-1" class="team-show content-popup"></a>
-                                <ul class="team-social">
-                                    <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                </ul>
+                    <div class="col-lg-3 col-mb-6">
+                        <div class="team team-s3 team-s3-alt animated" data-animate="fadeInUp" data-delay=".3">
+                            <div class="team-photo round-full team-photo-bg">
+                                <a href="#team-popup-1" class="team-show content-popup"
+                                    data-overlay="bg-theme-grad-alternet"></a>
+                                <img src="{% static 'images/team/sq-a.jpg' %}" alt="team" class="round-full">
                             </div>
                             <h5 class="team-name title title-sm">Louis Baker</h5>
                             <span class="team-position">CEO &amp; Lead Blockchain</span>
+                            <ul class="team-social team-social-s2">
+                                <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+                            </ul>
                         </div>
-                        <!-- Start .team-profile  ->
+                        <!-- Start .team-profile  -->
                         <div id="team-popup-1" class="team-popup mfp-hide">
                             <a title="Close" class="mfp-close">×</a>
                             <div class="row align-items-start">
                                 <div class="col-md-6">
                                     <div class="team-photo">
-                                        <img src="{% static 'images/team/a.jpg' %}" alt="team">
+                                        <img src="{% static 'images/team/a-color.jpg' %}" alt="team">
                                     </div>
-                                </div><!-- .col  ->
+                                </div><!-- .col  -->
                                 <div class="col-md-6">
                                     <div class="team-popup-info pl-md-3">
                                         <h3 class="team-name title title-lg pt-4">Louis Baker</h3>
-                                        <p class="team-position">CEO &amp; Lead Blockchain </p>
-                                        <ul class="team-social mb-4">
+                                        <p class="team-position mb-1">CEO &amp; Lead Blockchain </p>
+                                        <ul class="team-social team-social-s2 mb-4">
                                             <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
                                             <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
                                         </ul>
-                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
-                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis
+                                            icing elit. Simi lique, autem. </p>
+                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae
+                                            tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto
+                                            minima thanks.</p>
                                         <div class="progress-list">
                                             <div class="progress-wrap">
-                                                <div class="progress-title">Blockchain <span class="progress-amount">85%</span></div>
+                                                <div class="progress-title">Blockchain <span
+                                                        class="progress-amount">85%</span></div>
                                                 <div class="progress-bar progress-bar-xs bg-black-10">
-                                                    <div class="progress-percent bg-primary" data-percent="85"></div>
+                                                    <div class="progress-percent bg-theme-grad-alternet"
+                                                        data-percent="85"></div>
                                                 </div>
                                             </div>
                                             <div class="progress-wrap">
-                                                <div class="progress-title">Decentralization <span class="progress-amount">68%</span></div>
+                                                <div class="progress-title">Decentralization <span
+                                                        class="progress-amount">68%</span></div>
                                                 <div class="progress-bar progress-bar-xs bg-black-10">
-                                                    <div class="progress-percent bg-primary" data-percent="68"></div>
+                                                    <div class="progress-percent bg-theme-grad-alternet"
+                                                        data-percent="68"></div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div><!-- .col  ->
-                            </div><!-- .row  ->
-                        </div><!-- .team-profile  ->
-                    </div><!-- .col ->
-                    <div class="col-md-3 col-6">
-                        <div class="team animated" data-animate="fadeInUp" data-delay=".2">
-                            <div class="team-photo">
-                                <img src="{% static 'images/team/b.jpg' %}" alt="team">
-                                <a href="#team-popup-2" class="team-show content-popup"></a>
-                                <ul class="team-social">
-                                    <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                </ul>
+                                </div><!-- .col  -->
+                            </div><!-- .row  -->
+                        </div><!-- .team-profile  -->
+                    </div><!-- .col -->
+                    <div class="col-lg-3 col-mb-6">
+                        <div class="team team-s3 team-s3-alt animated" data-animate="fadeInUp" data-delay=".4">
+                            <div class="team-photo round-full team-photo-bg">
+                                <a href="#team-popup-2" class="team-show content-popup"
+                                    data-overlay="bg-theme-grad-alternet"></a>
+                                <img src="{% static 'images/team/sq-b.jpg' %}" alt="team" class="round-full">
                             </div>
                             <h5 class="team-name title title-sm">Jonathan Rios</h5>
                             <span class="team-position">CTO &amp; Software Engineer</span>
+                            <ul class="team-social team-social-s2">
+                                <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+                            </ul>
                         </div>
-                        <!-- Start .team-popup  ->
+                        <!-- Start .team-popup  -->
                         <div id="team-popup-2" class="team-popup mfp-hide">
                             <a title="Close" class="mfp-close">×</a>
                             <div class="row align-items-start">
                                 <div class="col-md-6">
                                     <div class="team-photo">
-                                        <img src="{% static 'images/team/b.jpg' %}" alt="team">
+                                        <img src="{% static 'images/team/b-color.jpg' %}" alt="team">
                                     </div>
-                                </div><!-- .col  ->
+                                </div><!-- .col  -->
                                 <div class="col-md-6">
                                     <div class="team-popup-info pl-md-3">
                                         <h3 class="team-name title title-lg pt-4">Jonathan Rios</h3>
-                                        <p class="team-position">CTO &amp; Software Engineer</p>
-                                        <ul class="team-social mb-4">
+                                        <p class="team-position mb-1">CTO &amp; Software Engineer</p>
+                                        <ul class="team-social team-social-s2 mb-4">
                                             <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
                                             <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
                                         </ul>
-                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
-                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis
+                                            icing elit. Simi lique, autem. </p>
+                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae
+                                            tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto
+                                            minima thanks.</p>
                                     </div>
-                                </div><!-- .col  ->
-                            </div><!-- .row  ->
-                        </div><!-- .team-popup  ->
-                    </div><!-- .col ->
-                    <div class="col-md-3 col-6">
-                        <div class="team animated" data-animate="fadeInUp" data-delay=".3">
-                            <div class="team-photo">
-                                <img src="{% static 'images/team/c.jpg' %}" alt="team">
-                                <a href="#team-popup-3" class="team-show content-popup"></a>
-                                <ul class="team-social">
-                                    <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                </ul>
+                                </div><!-- .col  -->
+                            </div><!-- .row  -->
+                        </div><!-- .team-popup  -->
+                    </div><!-- .col -->
+                    <div class="col-lg-3 col-mb-6">
+                        <div class="team team-s3 team-s3-alt animated" data-animate="fadeInUp" data-delay=".5">
+                            <div class="team-photo round-full team-photo-bg">
+                                <a href="#team-popup-3" class="team-show content-popup"
+                                    data-overlay="bg-theme-grad-alternet"></a>
+                                <img src="{% static 'images/team/sq-c.jpg' %}" alt="team" class="round-full">
                             </div>
                             <h5 class="team-name title title-sm">Jason Morales</h5>
                             <span class="team-position">Sr.Backend developer</span>
+                            <ul class="team-social team-social-s2">
+                                <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+                            </ul>
                         </div>
-                        <!-- Start .team-profile  ->
+                        <!-- Start .team-profile  -->
                         <div id="team-popup-3" class="team-popup mfp-hide">
                             <a title="Close" class="mfp-close">×</a>
                             <div class="row align-items-start">
@@ -555,150 +613,526 @@
                                     <div class="team-photo">
                                         <img src="{% static 'images/team/c.jpg' %}" alt="team">
                                     </div>
-                                </div><!-- .col  ->
+                                </div><!-- .col  -->
                                 <div class="col-md-6">
                                     <div class="team-popup-info pl-md-3">
                                         <h3 class="team-name title title-lg pt-4">Jason Morales</h3>
-                                        <p class="team-position">Sr.Backend developer</p>
-                                        <ul class="team-social mb-4">
+                                        <p class="team-position mb-1">Sr.Backend developer</p>
+                                        <ul class="team-social team-social-s2 mb-4">
                                             <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
                                             <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
                                         </ul>
-                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
-                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis
+                                            icing elit. Simi lique, autem. </p>
+                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae
+                                            tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto
+                                            minima thanks.</p>
                                     </div>
-                                </div><!-- .col  ->
-                            </div><!-- .row  ->
-                        </div><!-- .team-profile  ->
-                    </div><!-- .col ->
-                    <div class="col-md-3 col-6">
-                        <div class="team animated" data-animate="fadeInUp" data-delay=".4">
-                            <div class="team-photo">
-                                <img src="{% static 'images/team/d.jpg' %}" alt="team">
-                                <a href="#team-popup-4" class="team-show content-popup"></a>
-                                <ul class="team-social">
-                                    <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
-                                    <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
-                                </ul>
+                                </div><!-- .col  -->
+                            </div><!-- .row  -->
+                        </div><!-- .team-profile  -->
+                    </div><!-- .col -->
+                    <div class="col-lg-3 col-mb-6">
+                        <div class="team team-s3 team-s3-alt animated" data-animate="fadeInUp" data-delay=".6">
+                            <div class="team-photo round-full team-photo-bg">
+                                <a href="#team-popup-4" class="team-show content-popup"
+                                    data-overlay="bg-theme-grad-alternet"></a>
+                                <img src="{% static 'images/team/sq-d.jpg' %}" alt="team" class="round-full">
                             </div>
                             <h5 class="team-name title title-sm">Joseph Jordan</h5>
                             <span class="team-position">Software Engineer</span>
+                            <ul class="team-social team-social-s2">
+                                <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
+                                <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
+                                <li><a href="#"><em class="fab fa-twitter"></em></a></li>
+                            </ul>
                         </div>
-                        <!-- Start .team-profile  ->
+                        <!-- Start .team-profile  -->
                         <div id="team-popup-4" class="team-popup mfp-hide">
                             <a title="Close" class="mfp-close">×</a>
                             <div class="row align-items-start">
                                 <div class="col-md-6">
                                     <div class="team-photo">
-                                        <img src="{% static 'images/team/d.jpg' %}" alt="team">
+                                        <img src="{% static 'images/team/d-color.jpg' %}" alt="team">
                                     </div>
-                                </div><!-- .col  --
+                                </div><!-- .col  -->
                                 <div class="col-md-6">
                                     <div class="team-popup-info pl-md-3">
                                         <h3 class="team-name title title-lg pt-4">Joseph Jordan</h3>
-                                        <p class="team-position">Software Engineer</p>
-                                        <ul class="team-social mb-4">
+                                        <p class="team-position mb-1">Software Engineer</p>
+                                        <ul class="team-social team-social-s2 mb-4">
                                             <li><a href="#"><em class="fab fa-facebook-f"></em></a></li>
                                             <li><a href="#"><em class="fab fa-linkedin-in"></em></a></li>
                                         </ul>
-                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis icing elit. Simi lique, autem. </p>
-                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto minima thanks.</p>
+                                        <p>He is a great man to work Lorem ipsum dolor sit amet, consec tetur adipis
+                                            icing elit. Simi lique, autem. </p>
+                                        <p>Tenetur quos facere magnam volupt ates quas esse Sedrep ell endus mole stiae
+                                            tates quas esse Sed repell endus molesti aela uda ntium quis quam iusto
+                                            minima thanks.</p>
                                     </div>
-                                </div><!-- .col  ->
-                            </div><!-- .row  --
-                        </div><!-- .team-profile  ->
-                    </div><!-- .col --
-                </div><!-- .row ->
-                <div class="text-center animated" data-animate="fadeInUp" data-delay=".5">
-                    <a href="#" class="btn btn-grad">See All Team Member</a>
-                </div>
+                                </div><!-- .col  -->
+                            </div><!-- .row  -->
+                        </div><!-- .team-profile  -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
             </div>
-            <!-- Block @r ->
+         
         </div>
     </section>
     <!-- // -->
-    <section class="section section-faq bg-white" id="faq">
-        
+    <section class="section bg-theme-dark tc-light" id="partners">
         <div class="container">
             <!-- Section Head @s -->
-            <div class="section-head text-center wide-auto">
-                <h2 class="title animated" data-animate="fadeInUp" data-delay=".1">FAQs</h2>
-                <p class="animated" data-animate="fadeInUp" data-delay=".2">These are some of the questions we you think you might be interested in their answers.</p>
+            <div class="section-head text-center wide-auto-sm tc-light">
+                <h2 class="title title-s4 animated" data-animate="fadeInUp" data-delay=".1" title="Partners">
+                    Our
+                    Partners</h2>
             </div><!-- .section-head @e -->
             <!-- Block @s -->
-            <div class="nk-block block-faq">
-                <div class="row">
-                    <div class="col-md-4 col-lg-3 mb-4 mb-lg-0">
-                        <ul class="nav tab-nav tab-nav-vr tab-nav-bdr mr-lg-3 animated" data-animate="fadeInUp" data-delay=".3">
-                            <li><a class="active" data-toggle="tab" href="#general-questions"><em class="fas fa-caret-right"></em>General Questions</a></li>
-                            <!--li><a data-toggle="tab" href="#ico-questions"><em class="fas fa-caret-right"></em>ICO Questions</a></li>
-                            <li><a data-toggle="tab" href="#tokens-sales"><em class="fas fa-caret-right"></em>Tokens Sales</a></li>
-                            <li><a data-toggle="tab" href="#clients-releted"><em class="fas fa-caret-right"></em>Clients Releted</a></li-->
+            <div class="nk-block block-partners">
+                <ul class="partner-list flex-wrap">
+                    <li class="partner-logo-lg animated" data-animate="fadeInUp" data-delay=".2"><img
+                            src="{% static 'images/partners/a-md.png' %}" alt="partner"></li>
+                    <li class="partner-logo-lg animated" data-animate="fadeInUp" data-delay=".3"><img
+                            src="{% static 'images/partners/b-md.png' %}" alt="partner"></li>
+                    <li class="partner-logo-lg animated" data-animate="fadeInUp" data-delay=".4"><img
+                            src="{% static 'images/partners/c-md.png' %}" alt="partner"></li>
+                    <li class="partner-logo-lg animated" data-animate="fadeInUp" data-delay=".5"><img
+                            src="{% static 'images/partners/d-md.png' %}" alt="partner"></li>
+                    <li class="partner-logo-lg animated" data-animate="fadeInUp" data-delay=".6"><img
+                            src="{% static 'images/partners/e-md.png' %}" alt="partner"></li>
+                </ul>
+            </div>
+            <!-- Block @e -->
+        </div>
+    </section>
+    <!-- // -->
+    <section class="section bg-theme-alt tc-light section-connect" id="media-partner">
+        <div class="transform-line"></div>
+        <div class="container">
+            <!-- Section Head @s -->
+            <div class="section-head wide-auto-sm text-center">
+                <h2 class="title-xs animated" data-animate="fadeInUp" data-delay=".1">As seen in</h2>
+            </div><!-- .section-head @e -->
+            <!-- Block @s -->
+            <div class="nk-block block-partners">
+                <ul class="partner-list partner-list-s2 flex-wrap">
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".2"><img
+                            src="{% static 'images/partners/a-xs.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".25"><img
+                            src="{% static 'images/partners/b-xs.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".3"><img
+                            src="{% static 'images/partners/c-xs.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".35"><img
+                            src="{% static 'images/partners/d-xs.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".4"><img
+                            src="{% static 'images/partners/e-xs.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".45"><img
+                            src="{% static 'images/partners/f-xs.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".5"><img
+                            src="{% static 'images/partners/a-sm.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".55"><img
+                            src="{% static 'images/partners/b-sm.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".6"><img
+                            src="{% static 'images/partners/c-sm.png' %}" alt="partner"></li>
+                    <li class="partner-logo-s2 animated" data-animate="fadeInUp" data-delay=".65"><img
+                            src="{% static 'images/partners/d-sm.png' %}" alt="partner"></li>
+                </ul>
+            </div>
+            <!-- Block @e -->
+        </div>
+    </section>
+
+    <section class="section bg-theme tc-light pb-0" id="faqs">
+        <div class="container">
+            <div class="section-head text-center wide-auto-sm">
+                <h2 class="title title-s4 animated" data-animate="fadeInUp" data-delay=".1" title="FAQS">Frequently
+                    Asked Question</h2>
+                <p class="animated" data-animate="fadeInUp" data-delay=".2">Below we’ve provided a bit of ICO, ICO
+                    Token, cryptocurrencies, and few others. If you have any other questions, please get in touch using
+                    the contact form below.</p>
+            </div><!-- .section-head @e -->
+            <!-- Block @s -->
+            <div class="nk-block">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-10">
+                        <ul class="nav tab-nav tab-nav-line mgb-r animated" data-animate="fadeInUp" data-delay=".3">
+                            <li><a class="active" data-toggle="tab" href="#general-questions-19">General</a></li>
+                            <li><a data-toggle="tab" href="#ico-questions-19">Pre-ICO &amp; ICO</a></li>
+                            <li><a data-toggle="tab" href="#tokens-sales-19">Token</a></li>
+                            <li><a data-toggle="tab" href="#client-19">Client</a></li>
+                            <li><a data-toggle="tab" href="#legal-19">Legal</a></li>
                         </ul>
-                    </div><!-- .col -->
-                    <div class="col-md-8 col-lg-9">
-                        <div class="tab-content">
-                            <div class="tab-pane fade show active" id="general-questions">
-                                <div class="accordion accordion-faq" id="faq-1">
-                                    <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".1">
-                                        <h5 class="accordion-title accordion-title-sm" data-toggle="collapse" data-target="#faq-1-1">How do i purchase Cryptocurrency ?<span class="accordion-icon"></span></h5>
-                                        <div id="faq-1-1" class="collapse show" data-parent="#faq-1">
+                        <div class="tab-content animated" data-animate="fadeInUp" data-delay=".4">
+                            <div class="tab-pane fade show active" id="general-questions-19">
+                                <div class="accordion accordion-faq" id="faq-67">
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title" data-toggle="collapse" data-target="#faq-67-1">
+                                            What is ICO Crypto?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-67-1" class="collapse show" data-parent="#faq-67">
                                             <div class="accordion-content">
-                                                <p>There are a couple of methods, but the simplest and least expensive is via an online cryptocurrency exchange. You establish an account and from there, you transfer in cash and purchase any one of our accepted cryptocurrencies of your choice. available platforms to do that includes www.binance.com, www.coinbase.com, etc.</p>
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="accordion-item animated" data-animate="fadeInUp" data-delay=".2">
-                                        <h5 class="accordion-title accordion-title-sm collapsed" data-toggle="collapse" data-target="#faq-1-2">What cryptocurrencies can I fund my wallet with ? <span class="accordion-icon"></span></h5>
-                                        <div id="faq-1-2" class="collapse" data-parent="#faq-1">
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-67-2">
+                                            What cryptocurrencies can I use to purchase?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-67-2" class="collapse" data-parent="#faq-67">
                                             <div class="accordion-content">
-                                                <p>Accepted cryptocurrencies on {{site_name}} for wallet funding include Bitcoin(BTC), Ethereum(ETH), Litecoin(LTC), Binance smart chain (BNB), US stable Token (USDT).</p>
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
                                             </div>
                                         </div>
                                     </div>
-                                   
-                                   
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-67-3">
+                                            How can I participate in the ICO Token sale?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-67-3" class="collapse" data-parent="#faq-67">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-67-4">
+                                            How do I benefit from the ICO Token?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-67-4" class="collapse" data-parent="#faq-67">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="ico-questions">
-                                
+                            <div class="tab-pane fade" id="ico-questions-19">
+                                <div class="accordion accordion-faq" id="faq-68">
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title" data-toggle="collapse" data-target="#faq-68-1">
+                                            Which of us ever undertakes laborious?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-68-1" class="collapse show" data-parent="#faq-68">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-68-2">
+                                            Who do not know how to pursue rationally?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-68-2" class="collapse" data-parent="#faq-68">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-68-3">
+                                            Their separate existence is a myth?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-68-3" class="collapse" data-parent="#faq-68">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-68-4">
+                                            Pityful a rethoric question ran over her cheek?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-68-4" class="collapse" data-parent="#faq-68">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="tokens-sales">
-                                
+                            <div class="tab-pane fade" id="tokens-sales-19">
+                                <div class="accordion accordion-faq" id="faq-69">
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title" data-toggle="collapse" data-target="#faq-69-1">
+                                            When she reached the first hills?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-69-1" class="collapse show" data-parent="#faq-69">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-69-2">
+                                            Big Oxmox advised her not to do?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-69-2" class="collapse" data-parent="#faq-69">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-69-3">
+                                            Which roasted parts of sentences fly into your mouth?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-69-3" class="collapse" data-parent="#faq-69">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-69-4">
+                                            Vokalia and Consonantia, there live?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-69-4" class="collapse" data-parent="#faq-69">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="tab-pane fade" id="clients-releted">
-                                
+                            <div class="tab-pane fade" id="client-19">
+                                <div class="accordion accordion-faq" id="faq-70">
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title" data-toggle="collapse" data-target="#faq-70-1">
+                                            When she reached the first hills?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-70-1" class="collapse show" data-parent="#faq-70">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-70-2">
+                                            Big Oxmox advised her not to do?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-70-2" class="collapse" data-parent="#faq-70">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-70-3">
+                                            Which roasted parts of sentences fly into your mouth?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-70-3" class="collapse" data-parent="#faq-70">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-70-4">
+                                            Vokalia and Consonantia, there live?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-70-4" class="collapse" data-parent="#faq-70">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="legal-19">
+                                <div class="accordion accordion-faq" id="faq-71">
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title" data-toggle="collapse" data-target="#faq-71-1">
+                                            When she reached the first hills?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-71-1" class="collapse show" data-parent="#faq-71">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-71-2">
+                                            Big Oxmox advised her not to do?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-71-2" class="collapse" data-parent="#faq-71">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-71-3">
+                                            Which roasted parts of sentences fly into your mouth?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-71-3" class="collapse" data-parent="#faq-71">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item accordion-item-s4 bg-theme-alt">
+                                        <h5 class="accordion-title collapsed" data-toggle="collapse"
+                                            data-target="#faq-71-4">
+                                            Vokalia and Consonantia, there live?
+                                            <span class="accordion-icon accordion-icon-s2"></span>
+                                        </h5>
+                                        <div id="faq-71-4" class="collapse" data-parent="#faq-71">
+                                            <div class="accordion-content">
+                                                <p>Once ICO period is launched, You can purchased Token with Etherum,
+                                                    Bitcoin or Litecoin. You can also tempor incididunt ut labore et
+                                                    dolore magna aliqua sed do eiusmod eaque ipsa.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .block @e -->
         </div>
-
     </section>
-    <!-- // ->
-    <section class="section section-m section-partners bg-light" id="partners">
-
+    <!-- // -->
+    <section class="section section-contact bg-theme tc-light" id="contact">
         <div class="container">
-            <!-- Block @s ->
-            <div class="nk-block block-partners">
-                <h6 class="title title-xs tc-primary text-center animated" data-animate="fadeInUp" data-delay=".1">Our Partners</h6>
-                <ul class="partner-list flex-lg-nowrap">
-                    <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".2"><img src="{% static 'images/partners/a.png' %}" alt="partner"></li>
-                    <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".3"><img src="{% static 'images/partners/b.png' %}" alt="partner"></li>
-                    <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".4"><img src="{% static 'images/partners/c.png' %}" alt="partner"></li>
-                    <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".5"><img src="{% static 'images/partners/d.png' %}" alt="partner"></li>
-                    <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".6"><img src="{% static 'images/partners/e.png' %}" alt="partner"></li>
-                    <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".7"><img src="{% static 'images/partners/f.png' %}" alt="partner"></li>
-                    <li class="partner-logo animated" data-animate="fadeInUp" data-delay=".8"><img src="{% static 'images/partners/g.png' %}" alt="partner"></li>
-                </ul>
-            </div>
-            <!-- Block @e ->
+            <div class="section-head text-center wide-auto-sm">
+                <h2 class="title title-s4 animated" data-animate="fadeInUp" data-delay=".1" title="Contact">Contact Us
+                </h2>
+                <p class="animated" data-animate="fadeInUp" data-delay=".2">Any question? Reach out to us and we’ll get
+                    back to you shortly.</p>
+            </div><!-- .section-head @e -->
+            <!-- Block @s -->
+            <div class="nk-block block-contact">
+                <div class="row justify-content-center text-center">
+                    <div class="col-xl-8 col-lg-10">
+                        <ul class="contact-list contact-list-s1 flex-wrap flex-md-nowrap pdb-l">
+                            <li class="animated" data-animate="fadeInUp" data-delay=".3">
+                                <em class="contact-icon fas fa-phone"></em>
+                                <div class="contact-text">
+                                    <span>+44 0123 4567</span>
+                                </div>
+                            </li>
+                            <li class="animated" data-animate="fadeInUp" data-delay=".4">
+                                <em class="contact-icon fas fa-envelope"></em>
+                                <div class="contact-text">
+                                    <span>info@company.com</span>
+                                </div>
+                            </li>
+                            <li class="animated" data-animate="fadeInUp" data-delay=".5">
+                                <em class="contact-icon fas fa-paper-plane"></em>
+                                <div class="contact-text">
+                                    <span>Join us on Telegram</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div><!-- .col -->
+                    <div class="col-xl-8 col-lg-10">
+                        <div class="contact-wrap p-0">
+                            <form id="contact-form-01" class="contact-form nk-form-submit" action="form/contact.php"
+                                method="post">
+                                <div class="field-item field-item-center animated" data-animate="fadeInUp"
+                                    data-delay=".6">
+                                    <input name="contact-name" type="text" class="input-line required">
+                                    <label class="field-label field-label-line">Your Name</label>
+                                </div>
+                                <div class="field-item field-item-center animated" data-animate="fadeInUp"
+                                    data-delay=".7">
+                                    <input name="contact-email" type="email"
+                                        class="input-line input-line-center required email">
+                                    <label class="field-label field-label-line">Your Email</label>
+                                </div>
+                                <div class="field-item field-item-center animated" data-animate="fadeInUp"
+                                    data-delay=".8">
+                                    <textarea name="contact-message"
+                                        class="input-line input-line-center input-textarea required"></textarea>
+                                    <label class="field-label field-label-line">Your Message</label>
+                                </div>
+                                <input type="text" class="d-none" name="form-anti-honeypot" value="">
+                                <div class="field-wrap animated" data-animate="fadeInUp" data-delay=".9">
+                                    <button type="submit" class="btn btn-round btn-lg btn-grad">Submit</button>
+                                    <div class="form-results"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .block @e -->
         </div>
-
-    </section-->
+    </section>
+    <!-- // -->
 </main>
 
 {% endblock %}
-
-
