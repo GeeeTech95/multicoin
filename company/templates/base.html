@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-  
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <!-- Fav Icon  -->
@@ -53,23 +53,34 @@
                             <nav class="header-menu" id="example-menu-04">
                                 <ul class="menu menu-s2 animated" data-animate="fadeInDown" data-delay=".75">
                                     <li class="menu-item"><a class="menu-link nav-link" href="#ico">Who We Are</a></li>
-                                    <li class="menu-item"><a class="menu-link nav-link" href="#statistics">Statistics</a>
+                                    <li class="menu-item"><a class="menu-link nav-link"
+                                            href="#statistics">Statistics</a>
                                     </li>
-  
-                                    <li class="menu-item"><a class="menu-link nav-link" href="#top_investors">Team</a></li>
+
+                                    <li class="menu-item"><a class="menu-link nav-link" href="#top_investors">Team</a>
+                                    </li>
                                     <li class="menu-item"><a class="menu-link nav-link" href="#partners">Partners</a>
                                     </li>
                                     <li class="menu-item"><a class="menu-link nav-link" href="#faqs">FAQs</a>
                                     </li>
-                                    
+
                                     <li class="menu-item"><a class="menu-link nav-link" href="#contact">Contact</a></li>
                                 </ul>
                                 <ul class="menu-btns animated" data-animate="fadeInDown" data-delay=".85">
+                                    {% if user.is_authenticated %}
+                                    <li><a href="{% url 'dashboard' %}"
+                                            class="btn btn-rg btn-auto btn-outline btn-grad on-bg-theme btn-round">
+                                            <span>Dashboard</span>
+                                        </a>
+                                    </li>
+                                    {% else %}
                                     <li><a href="{% url 'login' %}"
                                             class="btn btn-rg btn-auto btn-outline btn-grad on-bg-theme btn-round"><span>Login</span></a>
                                     </li>
-                                    <li><a href="{% url 'register' %}" 
-                                            class="btn btn-rg btn-auto btn-outline btn-grad on-bg-theme btn-round"><span>Register</span></a></li>
+                                    {% endif %}
+                                    <li><a href="{% url 'register' %}"
+                                            class="btn btn-rg btn-auto btn-outline btn-grad on-bg-theme btn-round"><span>Register</span></a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div><!-- .header-navbar @e -->
@@ -77,18 +88,18 @@
                 </div>
             </div><!-- .header-main @e -->
             {% block header_banner %}
-         
+
             {% endblock %}
         </header>
 
         {% block content %}
 
-       
+
 
         {% endblock %}
 
         <footer class="nk-footer bg-theme-alt section-connect">
-            
+
             <div class="section section-footer section-s tc-light bg-transparent">
                 <div class="container">
                     <!-- Block @s -->
@@ -96,14 +107,15 @@
                         <div class="row">
                             <div class="col">
                                 <div class="wgs wgs-text text-center mb-3">
-                                  
+
                                     <!--div class="copyright-text copyright-text-s3 pdt-m">
                                         <p><span class="d-sm-block">Copyright &copy; 2018, ICO Crypto. Template Made By
                                                 <a href="./">Softnio</a> &amp; Handcrafted by iO. </span>All trademarks
                                             and copyrights belong to their respective owners.</p>
                                     </div-->
                                     <div class="copyright-text copyright-text-s3 pdt-m">
-                                        <p><span class="d-sm-block">Copyright &copy; 2016, {{site_name}}.  </span>All rights reserved</p>
+                                        <p><span class="d-sm-block">Copyright &copy; 2016, {{site_name}}. </span>All
+                                            rights reserved</p>
                                     </div>
                                 </div>
                             </div>

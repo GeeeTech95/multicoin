@@ -8,9 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="making digital currency investments easier and safer">
 	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
 	<!-- Site Title  -->
-	<title>Nintrend.ltd | User dashboard</title>
+	<title>{{site_name}} | Account dashboard</title>
 	<!-- Vendor Bundle CSS -->
 	<link rel="stylesheet" href="{% static 'user-dashboard/css/vendor.bundle.css' %}?ver=101">
 	<!-- Custom styles for this template -->
@@ -36,7 +36,7 @@
 
                     <div class="site-logo">
                         <a href="{% url 'index' %}" class="site-brand">
-                            <img style="height:41px;width:160px" src="{% static 'images/logo/logo.png' %}" alt="logo" srcset="{% static 'images/logo/logo.png' %} 2x">
+                            <img style="height:41px;width:160px" src="{% static 'images/logo.png' %}" alt="logo" srcset="{% static 'images/logo.png' %} 2x">
                         </a>
                     </div><!-- .site-logo -->
                     
@@ -67,7 +67,7 @@
                 <div class="topbar-lg d-none d-lg-block">
                     <div class="site-logo">
                         <a href="{% url 'index' %}" class="site-brand">
-                            <img style="height:41px;width:160px" src="{% static 'images/logo/logo.png' %}" alt="logo" srcset="{% static 'images/logo/logo.png' %} 2x">
+                            <img style="height:41px;width:160px" src="{% static 'images/logo.png' %}" alt="logo" srcset="{% static 'images/logo.png' %} 2x">
                         </a>
                     </div><!-- .site-logo -->
                 </div><!-- .topbar-lg -->
@@ -92,7 +92,7 @@
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="user-dropdown">
                                     <div class="user-dropdown-head">
-                                        <h6 class="user-dropdown-name">{{user.name}} <span>(user.unique_id)</span></h6>
+                                        <h6 class="user-dropdown-name">{{user.name}} <span>({{user.unique_id}})</span></h6>
                                         <span class="user-dropdown-email">{{user.email}}</span>
                                     </div>
                                    

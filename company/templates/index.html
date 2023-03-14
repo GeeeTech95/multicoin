@@ -180,7 +180,7 @@
     <!-- // -->
 
     <!-- // -->
-    <section class="section bg-dark " id="why">
+    <section class="section bg-theme-alt tc-light" id="why">
         <div class="background-shape bs-reverse"></div>
         <div class="container">
             <div class="section-head wide-sm text-center">
@@ -195,16 +195,16 @@
             <!-- Block @s -->
             <div class="nk-block">
                 <div class="row gutter-vr-40px justify-content-center">
-                    <div class="col-lg-4 col-md-4">
-                        <div class="feature feature-s8 feature-s8-alt feature-center card card-full-lg card-md animated"
+                    <div class="col-lg-4 col-md-4 ">
+                        <div class="feature feature-s8 feature-s8-alt bg-theme-dark  feature-center card card-full-lg card-md animated"
                             data-animate="fadeInUp" data-delay=".4">
                             <div class="feature-icon feature-icon-lg feature-icon-lg-s2">
                                 <img src="{% static 'images/icons/icon-h.png' %}" alt="feature">
                             </div>
                             <div class="feature-text feature-text-s8">
-                                <h4 class="title title-sm title-thin title-s5"><span>Ease To Use
-                                    </span><span>Simple &amp; Robust</span></h4>
-                                <p> We have simplified the complexities
+                                <h4 class="title title-sm title-thin title-s5"><span>Easy To Use
+                                    </span><span class="text-light">Simple &amp; Robust</span></h4>
+                                <p class="text-light"> We have simplified the complexities
                                     encountered in cryptocurrency and digital asset investment.</p>
                                 <a href="#" class="link link-primary link-feature-s1"><em
                                         class="link-icon icon-circle icon-circle-md ti ti-arrow-right"></em></a>
@@ -212,15 +212,15 @@
                         </div>
                     </div><!-- .col -->
                     <div class="col-lg-4 col-md-4">
-                        <div class="feature feature-s8 feature-s8-alt feature-center card card-full-lg card-md animated"
+                        <div class="feature feature-s8 feature-s8-alt bg-theme-dark  feature-center card card-full-lg card-md animated"
                             data-animate="fadeInUp" data-delay=".5">
                             <div class="feature-icon feature-icon-lg feature-icon-lg-s2">
                                 <img src="{% static 'images/icons/icon-i.png' %}" alt="feature">
                             </div>
                             <div class="feature-text feature-text-s8">
                                 <h4 class="title title-sm title-thin title-s5"><span>Excellent Trading Experience
-                                    </span><span>We are better than the rest</span></h4>
-                                <p> We are constantly adding
+                                    </span><span class="text-light">We are better than the rest</span></h4>
+                                <p class="text-light"> We are constantly adding
                                     new offerings that will give you a better, more diverse investment experience,
                                     accessible from anywhere and on any device.</p>
                                 <a href="#" class="link link-primary link-feature-s1"><em
@@ -229,15 +229,16 @@
                         </div>
                     </div><!-- .col -->
                     <div class="col-lg-4 col-md-4">
-                        <div class="feature feature-s8 feature-s8-alt feature-center card card-full-lg card-md animated"
+                        <div class="feature feature-s8 feature-s8-alt bg-theme-dark  feature-center card card-full-lg card-md animated"
                             data-animate="fadeInUp" data-delay=".6">
                             <div class="feature-icon feature-icon-lg feature-icon-lg-s2">
                                 <img src="{% static 'images/icons/icon-j.png' %}" alt="feature">
                             </div>
                             <div class="feature-text feature-text-s8">
                                 <h4 class="title title-sm title-thin title-s5"><span>Withdrawal Options
-                                    </span><span>Different ways you can easily get your dividends</span></h4>
-                                <p>We provide varoius withdrawal options for you to choose from. we always prioritise your convenience</p>
+                                    </span><span class="text-light">Different ways you can easily get your dividends</span></h4>
+                                <p class="text-light">We provide varoius withdrawal options for you to choose from. we always prioritise
+                                    your convenience</p>
                                 <a href="#" class="link link-primary link-feature-s1"><em
                                         class="link-icon icon-circle icon-circle-md ti ti-arrow-right"></em></a>
                             </div>
@@ -247,7 +248,8 @@
                 <div class="d-flex justify-content-center pdt-r">
                     <ul class="btn-grp animated" data-animate="fadeInUp" data-delay=".7">
                         <li><a href="{% url 'register' %}" class="btn btn-md btn-grad">Get a Wallet</a></li>
-                        <li><a href="#0" class="btn btn-md btn-outline btn-grad on-bg-light">Download Whitepaper</a></li>
+                        <li><a href="{% url 'login' %}" class="btn btn-md btn-outline btn-grad on-bg-light">Access account</a>
+                        </li>
                     </ul>
                 </div>
             </div><!-- .block @e -->
@@ -347,10 +349,12 @@
                     </div>
                     <div class="col-sm-10 col-md-6 col-lg-5">
                         <div class="nk-block-text ml-lg-3 ml-xl-0">
-                            <p class="animated" data-animate="fadeInUp" data-delay=".4">Our platform is designed to be
+                            <p class="animated" data-animate="fadeInUp" data-delay=".4">
+                                Our platform is designed to be
                                 user-friendly and secure, with advanced features and tools that enable you to manage
                                 your portfolio with ease. Whether you are new to the world of crypto or an experienced
-                                trader, we have everything you need to succeed.</p>
+                                trader, we have everything you need to succeed.
+                            </p>
                             <ul class="list list-dot pdb-r">
                                 <li class="animated" data-animate="fadeInUp" data-delay=".5">Portfolio Management</li>
                                 <li class="animated" data-animate="fadeInUp" data-delay=".55">Investments</li>
@@ -676,7 +680,7 @@
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div>
-         
+
         </div>
     </section>
     <!-- // -->
