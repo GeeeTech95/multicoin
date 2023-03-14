@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="{% static 'main/css/style-dark.css' %}?ver=1930" id="changeTheme">
     <!-- Extra CSS -->
     <link rel="stylesheet" href="{% static 'main/css/theme.css' %}?ver=1930">
+    <link rel="stylesheet" href="{% static 'main/css/extra.css' %}">
+    <link href="{% static 'main/css/vendors/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
 
 </head>
 
@@ -57,7 +59,8 @@
                                             href="#statistics">Statistics</a>
                                     </li>
 
-                                    <li class="menu-item"><a class="menu-link nav-link" href="#top_investors">Team</a>
+                                    <li class="menu-item"><a class="menu-link nav-link"
+                                            href="#testimonials">Testimonials</a>
                                     </li>
                                     <li class="menu-item"><a class="menu-link nav-link" href="#partners">Partners</a>
                                     </li>
@@ -67,10 +70,10 @@
                                     <li class="menu-item"><a class="menu-link nav-link" href="#contact">Contact</a></li>
                                 </ul>
                                 <ul class="menu-btns animated" data-animate="fadeInDown" data-delay=".85">
-                                    {% if user.is_authenticated %}
+                                    {% if user.is_autenticated %}
                                     <li><a href="{% url 'dashboard' %}"
                                             class="btn btn-rg btn-auto btn-outline btn-grad on-bg-theme btn-round">
-                                            <span>Dashboard</span>
+                                            <span>Dashv</span>
                                         </a>
                                     </li>
                                     {% else %}
@@ -130,8 +133,14 @@
 
     <!-- JavaScript -->
     <script src="{% static 'main/js/jquery.bundle.js' %}" ?ver=1930"></script>
+    <script src="{% static 'main/js/vendors/wow/wow.min.js' %}""></script>
+    <script src=" {% static 'main/js/vendors/waypoints/waypoints.min.js' %}""></script>
+    <script src=" {% static 'main/js/vendors/owlcarousel/owl.carousel.min.js' %}""></script>
+    <script src=" {% static 'main/js/vendors/counterup/counterup.min.js' %}""></script>
     <script src="{% static 'main/js/scripts.js' %}" ?ver=1930"></script>
+    <script src="{% static 'main/js/core.js' %}"></script>
     <script src="{% static 'main/js/charts.js' %}""></script>
+
 </body>
 
 </html>
