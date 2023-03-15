@@ -25,14 +25,14 @@ urlpatterns = [
     #DASHBOARD
     path('dashboard/',Dashboard.as_view(),name = 'dashboard'),
 
-    #path('kyc/',KYC.as_view(),name = 'kyc'),
+    path('kyc/',KYC.as_view(),name = 'kyc'),
     path('settings/',UpdateSetting.as_view(),name = 'setting'),
     path('transactions/',Transaction.as_view(),name = 'transaction'),
     path('referral/',Referral.as_view(),name = 'referral'),
     path('login-redirect/',LoginRedirect.as_view(),name="login-redirect")
 
 
-    #path('profile/',Profile.as_view(),name = 'register'),
+
     
 
 ]
