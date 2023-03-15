@@ -30,7 +30,7 @@ class CreateTransaction(AdminBase,CreateView) :
         return render(request,self.template_name,locals())
 
     def post(self,request,*args,**kwargs) :
-        form = self.form_class(admin=request.user,data=request.POST) 
+        form = self.form_class(data=request.POST) 
         if form.is_valid() :
             form.save(commit  = False) 
             user = form.cleaned_data['user']
@@ -39,10 +39,10 @@ class CreateTransaction(AdminBase,CreateView) :
             user.user_wallet.save() 
             form.instance.status  = "Approved"
             transact = form.save()
-            if form.cleaned_data['send_transaction_email'] or self.admin.settings.enable_transaction_emails :
+            if form.cleaned_data['send_transaction_email']:
                 mail = Email(send_type = "alert")
                 mail.transaction_email(transact)
-            msg = "Congratulations!, A {} transaction of {} just ocurred on your wallet".format(transact.transaction_type,transact.amount)
+            msg = "Hello!, A {} transaction of {} just ocurred on your wallet".format(transact.transaction_type,transact.amount)
             #send user notification
             Notification.notify(user,msg)   
             return HttpResponseRedirect(self.success_url)
@@ -59,4 +59,4 @@ class TransactionHistory(ListView) :
     template_name = 'transaction-history.html'
 
     def get_queryset(self) :
-        return self.model.objects.filter(user__admin = self.request.user).order_by('-date')
+        return self.model.objects.all().order_by('-date')

@@ -24,7 +24,7 @@ urlpatterns = [
     path('',Dashboard.as_view(),name = 'admin-dashboard'),
     path('members/',Members.as_view(),name = 'my-members'),
     path('member/<int:pk>/',MemberDetail.as_view(),name = 'member-detail'),
-    path('settings/',Settings.as_view(),name = 'admin-settings'),
+
     path('Terms-of-service',TOS.as_view(),name = 'tos'),
 
     #MEMBERS

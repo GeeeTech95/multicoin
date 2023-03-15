@@ -135,6 +135,10 @@ class Invest(LoginRequiredMixin,View)  :
 
             if not investment.approve_investments() :
                 if user.user_wallet.allow_automatic_investment :
+                    #auto approve and activate then
+                    investment.is_active = True
+                    investment.is_approved = True
+                    investment.save()
                     msg = "You have succesfully subscribed to the {} investment plan, with an initial capital of ${}".format(
                     form.instance.plan.name,
                     form.cleaned_data['amount']

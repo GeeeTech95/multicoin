@@ -307,7 +307,7 @@ class PendingDeposit(models.Model)    :
     is_declined = models.BooleanField(default = False)
     #reason for declining
     decline_reason = models.TextField(null = True)
-    payment_method = models.CharField(max_length=20,choices = method_choices)
+    payment_method = models.CharField(max_length=20,choices = method_choices,default="direct")
     payment_proof = models.FileField(upload_to=get_path)
     date = models.DateTimeField(auto_now_add=True)
    
