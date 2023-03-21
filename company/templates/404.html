@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="zxx" class="js">
 <head>
@@ -6,14 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <!-- Fav Icon  -->
-<link rel="shortcut icon" href="images/favicon.png">
+<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
 <!-- Site Title  -->
-<title>Error 404 - Dark | ICO Crypto - ICO Landing Page &amp; Multi-Purpose Cryptocurrency HTML Template</title>
+<title>{{site_name}}  | Page not Found</title>
 <!-- Bundle and Base CSS -->
-<link rel="stylesheet" href="{% static 'assets/css/vendor.bundle.css' %}?ver=1930">
-<link rel="stylesheet" href="{% static 'assets/css/style-dark.css' %}?ver=1930" id="changeTheme">
+<link rel="stylesheet" href="{% static 'main/css/vendor.bundle.css' %}?ver=1930">
+<link rel="stylesheet" href="{% static 'main/css/style-dark.css' %}?ver=1930" id="changeTheme">
 <!-- Extra CSS -->
-<link rel="stylesheet" href="{% static 'assets/css/theme.css' %}?ver=1930">
+<link rel="stylesheet" href="{% static 'main/css/theme.css' %}?ver=1930">
 
 
 
@@ -28,7 +30,7 @@
         <div class="container">
             <main class="nk-pages nk-pages-centered tc-light px-0 text-center">
                 <header class="pt-5">
-                    <a href="./" class="d-inline-block logo-lg"><img src="{% static 'images/logo-white2x.png' %}" srcset="images/logo-white2x.png 2x" alt="logo"></a>
+                    <a href="./" class="d-inline-block logo-lg"><img src="{% static 'images/logo.png' %}" srcset="{% static 'images/logo.png' %} 2x" alt="logo"></a>
                 </header>
                 <div class="my-auto py-5">
                     <div class="row justify-content-center">
@@ -41,9 +43,9 @@
                                     <img src="{% static 'images/piler-b.png' %}" alt="graphic">
                                 </div>
                                 <h2 class="title-xxl-grad">404</h2>
-                                <h5 class="pb-2">Opps! Why you’re here?</h5>
-                                <p class="">We are very sorry for inconvenience. It looks like you’re try to access a page that either has been deleted or never existed.</p>
-                                <a href="#" class="btn btn-grad btn-md btn-round">Back to home</a>
+                                <h5 class="pb-2">Opps! This Page Could Not Be Found</h5>
+                                <p class="">We are very sorry for inconvenience. It looks like you’re trying to access a page that either has been deleted or never existed.</p>
+                                <a href="{% url 'index' %}" class="btn btn-grad btn-md btn-round">Back to home</a>
                             </div> 
                         </div>
                     </div>
@@ -66,8 +68,8 @@
 	<div class="preloader"><span class="spinner spinner-round"></span></div>
 	
 	<!-- JavaScript -->
-	<script src="{% static 'assets/js/jquery.bundle.js' %}"?ver=1930"></script>
-	<script src="{% static 'assets/js/scripts.js' %}"?ver=1930"></script>
-	<script src="{% static 'assets/js/charts.js' %}""></script>
+	<script src="{% static 'main/js/jquery.bundle.js' %}"?ver=1930"></script>
+	<script src="{% static 'main/js/scripts.js' %}"?ver=1930"></script>
+	<script src="{% static 'main/js/charts.js' %}""></script>
 </body>
 </html>

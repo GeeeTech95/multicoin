@@ -3,6 +3,10 @@ from django.views.generic import TemplateView,View
 from django.http import JsonResponse
 from django.core.mail import send_mail
 from django.conf import settings
+from django.shortcuts import render
+from django.template import RequestContext
+
+
 
 from wallet.models import Plan
 from .forms import ContactForm
@@ -74,3 +78,15 @@ class Contact(View) :
             feedback['success'] = True
         else : feedback['error'] = "details failed validation"
         return JsonResponse(feedback)    
+
+
+
+
+def Page404(request, *args, **kwargs):
+    return render(request,'404.html', {})
+   
+
+
+def Page500(request, *args, **kwargs):
+    return render(request,'500.html', {})
+   
