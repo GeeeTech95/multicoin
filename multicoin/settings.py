@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '24q_*&tn+5k_*6h6$nsccghwwb#8b%v4i)1h(wd08_02_-(czt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -156,6 +156,12 @@ DEFAULT_FROM_EMAIL  = "support@multicoin.ltd"
 EMAIL_HOST_PASSWORD = '#@Kyletech99'
 EMAIL_HOST_USER_ALERT = "transaction@multicoin.ltd"
 EMAIL_HOST_USER_SUPPORT = "support@multicoin.ltd"
+
+#GODADDY and tawkto
+#username : hmdzhamad3@gmail.com
+#email :hmdzhamad3@gmail.com
+#password : racpaxx44
+
 
 EMAIL_USE_TLS = "True"
 

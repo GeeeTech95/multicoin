@@ -640,6 +640,8 @@ h6, .h6, .fz-6 { font-size: 0.94rem; }
 
 .text-primary { color: #122272 !important; }
 
+.text-light { color: #ffff !important; }
+
 .text-primary-alt { color: #1940b0 !important; }
 
 .text-theme-alt { color: #0189e0; }
