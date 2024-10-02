@@ -10,12 +10,12 @@ python manage.py collectstatic --no-input
 
 # Apply any outstanding database migrations
 python manage.py migrate
-#python manage.py loaddata country.json
+python manage.py loaddata country.json
 #python manage.py loaddata plans.json
 #python manage.py loaddata superuser.json
 
+export DJANGO_SUPERUSER_EMAIL=admin.multicoin@bitcoinvoyager.finance
+export DJANGO_SUPERUSER_USERNAME=admin1
+export DJANGO_SUPERUSER_PASSWORD=NRX6@i*845
 
-#export DJANGO_SUPERUSER_EMAIL=admin1@bitcoinvoyager.finance
-#export DJANGO_SUPERUSER_PASSWORD=NRX6HbY.+dHA4s@
-
-#python manage.py createsuperuser --no-input
+python manage.py createsuperuser --no-input
