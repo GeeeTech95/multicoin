@@ -1,24 +1,61 @@
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '24q_*&tn+5k_*6h6$nsccghwwb#8b%v4i)1h(wd08_02_-(czt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
+
 
 ALLOWED_HOSTS = ['*']
+
+
+
+
+JAZZMIN_SETTINGS = {
+    # title of the window (Will default to current_admin_site.site_title if absent or None)
+    "site_title": "Bulligon Signals Admin",
+
+    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_header": "Bulligon Signals",
+
+    # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
+    "site_brand": "Bulligon Signals",
+
+    # Logo to use for your site, must be present in static files, used for brand on top left
+    "site_logo": "img/logo/logo-name.png",
+
+    # Logo to use for your site, must be present in static files, used for login form logo (defaults to site_logo)
+    "login_logo": "img/logo/icon-jazz.png",
+
+    # Logo to use for login form in dark themes (defaults to login_logo)
+    "login_logo_dark": "img/logo/logo-name-dark.png",
+
+    # CSS classes that are applied to the logo above
+    "site_logo_classes": ["logo"],
+
+    "custom_css": "css/style.css",
+
+    # Relative path to a favicon for your site, will default to site_logo if absent (ideally 32x32 px)
+    "site_icon": "img/logo/icon-jazz.png",
+
+    # Welcome text on the login screen
+    "welcome_sign": "Welcome Admin!",
+
+    # Copyright on the footer
+    "copyright": "Bulligon Signals",
+}
 
 
 # Application definition
 
 INSTALLED_APPS = [
+            'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -83,11 +120,29 @@ AUTH_USER_MODEL = 'Users.User'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+
+if DEBUG :
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            "OPTIONS": {
+                "timeout": 30,
+            }
+        },
+        "OPTIONS": {
+        # ...
+        "timeout": 30,
+        # ...
     }
+    }
+
+else :
+    # Replace the SQLite DATABASES configuration with PostgreSQL:
+   
+
+    DATABASES = {
+    'default': dj_database_url.config(default='postgres://localhost:5432/mydatabase')
 }
 
 
@@ -139,8 +194,10 @@ SITE_NAME = "multicoin"
 STATIC_ROOT = os.path.join(BASE_DIR,"asset")
 
 STATIC_URL = '/static/'
-#STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
- 
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+
 
 LOGIN_REDIRECT_URL = 'login-redirect'
 
