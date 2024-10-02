@@ -228,3 +228,4 @@ SITE_ADDRESS = "https://www.multicoin.ltd/"
 FREE_PLAN_DURATION = 2  #in days
 SUBSCRIPTION_DURATION = 365   #in days
 
+DEFAULT_AUTO_FIELD='django.db.models.AutoField'

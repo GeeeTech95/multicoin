@@ -54,8 +54,8 @@ class Plan(models.Model) :
 
 class Currency(models.Model) :
 
-    name = models.CharField(max_length=10)
-    code = models.CharField(max_length=10)
+    name = models.CharField(max_length=30)
+    code = models.CharField(max_length=20)
 
     def __str__(self) :
         return self.name
@@ -270,7 +270,7 @@ class Transaction(models.Model) :
 
     status = (('Approved','Approved'),('Declined','Declined'),('Pending','Pending'))
     t_choices = (('WITHDRAWAL','WITHDRAWAL'),('DEPOSIT','DEPOSIT'),("BONUS","BONUS"),("AIR DROP","AIR DROP"),("REFERAL EARNING","REFERAL EARNING"))
-    transaction_id = models.CharField(max_length=15,editable = False)
+    transaction_id = models.CharField(max_length=35,editable = False)
     user  = models.ForeignKey(get_user_model(),on_delete = models.CASCADE,related_name = 'user_transaction')
     transaction_type = models.CharField(max_length=20,choices = t_choices)
     description = models.TextField()
@@ -336,8 +336,8 @@ class WithdrawalApplication(models.Model) :
     status_choices = (('PENDING','PENDING'),('APPROVED','APPROVED'),('DECLINED','DECLINED'))
     user  = models.ForeignKey(get_user_model(),on_delete = models.CASCADE,related_name = 'pending_withdrawal')
     amount = models.FloatField()  #in $
-    balance_type = models.CharField(max_length=10,choices = balance_type_choices)
-    status = models.CharField(max_length= 20,choices = status_choices,default = 'PENDING')
+    balance_type = models.CharField(max_length=30,choices = balance_type_choices)
+    status = models.CharField(max_length= 30,choices = status_choices,default = 'PENDING')
     amount_paid = models.FloatField(blank = True,null = True)  
     is_received = models.BooleanField(default = True)
     date = models.DateTimeField(auto_now_add=True)
