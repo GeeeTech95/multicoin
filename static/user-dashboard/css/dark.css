@@ -1,0 +1,407 @@
+
+/*! Dark Mode - ICO Crypto */
+
+/*! 02.0 - RESET (Dark Mode) */
+body {
+    font-family: "Poppins", sans-serif !important;
+    color: #ffffff !important; /* White text */
+    font-size: 14px !important;
+    line-height: 1.86 !important;
+    font-weight: 300 !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    position: relative !important;
+    background: #1b1f2b !important; /* Dark background */
+    min-width: 320px !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6, p, ul:not(.btn-grp), ol, table {
+    margin-bottom: 12px !important;
+    line-height: 1.68 !important;
+    color: #ffffff !important; /* White text */
+  }
+  
+  h1 span, h2 span, h3 span, h4 span, h5 span, h6 span, p span {
+    color: #ffffff !important; /* White text */
+  }
+  
+  a {
+    outline: 0 !important;
+    transition: all 0.5s !important;
+    color: #ffffff !important; /* White text */
+  }
+  a:hover, a:focus, a:active {
+    color: #e0e0e0 !important; /* Slightly off-white hover color */
+  }
+  
+  /* Utility Classes - Dark Mode */
+  .sap {
+    width: 100% !important;
+    height: 1px !important;
+    margin: 20px 0 !important;
+    background: #333a48 !important; /* Darker separator */
+  }
+  
+  .container {
+    z-index: 5 !important;
+    background-color: #1c1c1c !important; /* Container background */
+    color: #ffffff !important; /* White text */
+  }
+  
+  /* Adjust gaps for consistency with dark mode */
+  .gaps-1x { height: 10px !important; }
+  .gaps-2x { height: 20px !important; }
+  
+  /* Tables and other elements */
+  table {
+    color: #ffffff !important; /* White text */
+    background-color: #2a2f3b !important; /* Dark table background */
+    border-color: #444 !important; /* Dark border */
+  }
+  
+  /* Buttons */
+  .btn {
+    background-color: #2b56f5 !important;
+    color: #ffffff !important; /* White button text */
+  }
+  .btn:hover {
+    background-color: #1e3bb8 !important;
+  }
+  
+  /* Add any other specific elements with dark mode colors here */
+  
+  
+  /** Dark Theme **/
+  body {
+    background-color: #1c1c1c !important;
+    color: #ffffff !important;
+  }
+  
+  /** Button **/
+  .btn { 
+    position: relative; 
+    color: #fff !important; 
+    padding: 10px 30px; 
+    font-size: 14px; 
+    line-height: 24px; 
+    letter-spacing: 0.1em; 
+    border-radius: 4px; 
+    text-transform: uppercase; 
+    transition: all .4s ease; 
+    background-color: #333333 !important;
+    border: 1px solid #444444 !important;
+  }
+  .btn:hover, .btn:focus, .btn:active { 
+    box-shadow: none; 
+    outline: none; 
+    background-color: #555555 !important;
+  }
+  .btn .ti, .btn [class*=fa-] { 
+    margin-right: 8px; 
+  }
+  .btn-icon { 
+    letter-spacing: 0.01em; 
+  }
+  .btn-sm { 
+    padding: 10px 18px; 
+    line-height: 19px; 
+  }
+  .btn-xs { 
+    padding: 5px 12px; 
+    font-size: 11px; 
+    line-height: 18px; 
+    text-transform: none; 
+    letter-spacing: 0.025em; 
+  }
+  
+  .btn-uline {
+    text-transform: capitalize; 
+    padding: 0; 
+  }
+  .btn-uline:after {
+    position: absolute; 
+    content: ''; 
+    height: 1px; 
+    width: 100%; 
+    left: 0; 
+    bottom: 0; 
+    transition: all .4s; 
+  }
+  
+  .btn-uline-light {
+    color: #91a5cb !important;
+  }
+  .btn-uline-light:after {
+    background: #91a5cb !important;
+  }
+  .btn-uline-light:hover, .btn-uline-light:focus, .btn-uline-light:active {
+    color: #6783b8 !important;
+  }
+  .btn-uline-light:hover:after, .btn-uline-light:focus:after, .btn-uline-light:active:after {
+    background: #6783b8 !important;
+  }
+  
+  /** Button Variants ***/
+  .btn-uline-warning {
+    color: #ffdc70 !important;
+  }
+  .btn-uline-warning:after {
+    background: #ffdc70 !important;
+  }
+  .btn-uline-warning:hover, .btn-uline-warning:focus, .btn-uline-warning:active {
+    color: #ffc100 !important;
+  }
+  .btn-uline-warning:hover:after, .btn-uline-warning:focus:after, .btn-uline-warning:active:after {
+    background: #ffc100 !important;
+  }
+  
+  /** Button Colors **/
+  .btn-uline-primary {
+    color: #96abfa !important;
+  }
+  .btn-uline-primary:after {
+    background: #96abfa !important;
+  }
+  .btn-uline-primary:hover, .btn-uline-primary:focus, .btn-uline-primary:active {
+    color: #2b56f5 !important;
+  }
+  .btn-uline-primary:hover:after, .btn-uline-primary:focus:after, .btn-uline-primary:active:after {
+    background: #2b56f5 !important;
+  }
+  
+  .btn-uline-info {
+    color: #f7fbff !important;
+  }
+  .btn-uline-info:after {
+    background: #f7fbff !important;
+  }
+  .btn-uline-info:hover, .btn-uline-info:focus, .btn-uline-info:active {
+    color: #87bfff !important;
+  }
+  .btn-uline-info:hover:after, .btn-uline-info:focus:after, .btn-uline-info:active:after {
+    background: #87bfff !important;
+  }
+  
+  .btn-uline-success {
+    color: #43ffba !important;
+  }
+  .btn-uline-success:after {
+    background: #43ffba !important;
+  }
+  .btn-uline-success:hover, .btn-uline-success:focus, .btn-uline-success:active {
+    color: #00d285 !important;
+  }
+  .btn-uline-success:hover:after, .btn-uline-success:focus:after, .btn-uline-success:active:after {
+    background: #00d285 !important;
+  }
+  
+  .btn-uline-danger {
+    color: #ff7070 !important;
+  }
+  .btn-uline-danger:after {
+    background: #ff7070 !important;
+  }
+  .btn-uline-danger:hover, .btn-uline-danger:focus, .btn-uline-danger:active {
+    color: #ff0000 !important;
+  }
+  .btn-uline-danger:hover:after, .btn-uline-danger:focus:after, .btn-uline-danger:active:after {
+    background: #ff0000 !important;
+  }
+  
+  /** Social Buttons **/
+  .btn-facebook { 
+    background: #3b5998 !important; 
+    border-color: #3b5998 !important; 
+    box-shadow: 0px 2px 18px 2px rgba(59, 89, 152, 0.25) !important; 
+  }
+  .btn-facebook:hover, .btn-facebook:focus, .btn-facebook:active { 
+    color: #fff !important; 
+    background: #344e86 !important; 
+    border-color: #344e86 !important; 
+  }
+  
+  .btn-google { 
+    background: #d85040 !important; 
+    border-color: #d85040 !important; 
+    box-shadow: 0px 2px 18px 2px rgba(216, 80, 64, 0.25) !important; 
+  }
+  .btn-google:hover, .btn-google:focus, .btn-google:active { 
+    color: #fff !important; 
+    background: #d33d2b !important; 
+    border-color: #d33d2b !important; 
+  }
+  
+  /** Light & Other Button Variants **/
+  .btn-light { 
+    background: #6783b8 !important; 
+    border-color: #6783b8 !important; 
+    box-shadow: 0px 2px 18px 2px rgba(103, 131, 184, 0.25) !important; 
+  }
+  .btn-light:hover, .btn-light:focus, .btn-light:active { 
+    color: #fff !important; 
+    background: #5675b0 !important; 
+    border-color: #5675b0 !important; 
+  }
+  
+  /** Table **/
+  .table tr { 
+    background: rgba(50, 50, 50, 0.8) !important; 
+  }
+  .table tr:nth-child(even) { 
+    background: rgba(70, 70, 70, 0.8) !important; 
+  }
+  .table tr:last-child td:first-child { 
+    border-radius: 0 0 0 4px !important; 
+  }
+  .table tr:last-child td:last-child { 
+    border-radius: 0 0 4px 0 !important; 
+  }
+  .table td { 
+    padding: 10px 20px; 
+    border: none; 
+    white-space: nowrap; 
+    color: #ffffff !important; 
+  }
+  .table td span { 
+    color: #6783b8 !important; 
+    display: block; 
+    font-weight: 600; 
+    text-transform: uppercase; 
+    font-size: 12px; 
+    line-height: 1.1; 
+    padding-top: 5px; 
+  }
+  .table thead tr { 
+    background: #2b56f5 !important; 
+  }
+  .table thead th { 
+    padding: 10px 20px; 
+    border: none; 
+    white-space: nowrap; 
+    color: #ffffff !important; 
+  }
+  
+  /** Accordion ***/
+  .accordion-simple {
+    padding-bottom: 25px !important; 
+  }
+  .accordion-item {
+    padding-bottom: 5px !important; 
+  }
+  .accordion-item:last-child {
+    padding-bottom: 0 !important; 
+  }
+  .accordion-heading {
+    cursor: pointer; 
+    color: #6783b8 !important; 
+    font-weight: 500 !important; 
+    transition: all .4s !important; 
+    margin-bottom: 8px !important; 
+    padding-left: 20px !important; 
+    font-size: 1em !important; 
+  }
+
+
+
+  .user-sidebar {
+    background-color: #1e1e1e !important;
+}
+.user-sidebar:before {
+    background: #1e1e1e !important;
+}
+.user-sidebar-overlay {
+    background: rgba(0, 0, 0, 0.8) !important;
+}
+.user-kyc {
+    background: #2c2f38 !important;
+}
+.user-panel {
+    background: #2c2f38 !important;
+}
+.user-panel-title {
+    color: white !important;
+}
+.user-panel-subtitle {
+    color: #6783b8 !important;
+}
+.user-panel p {
+    color: white !important;
+}
+.user-dropdown-head {
+    background: #2b56f5 !important;
+}
+.user-dropdown-name {
+    color: white !important;
+}
+.user-dropdown-name span {
+    color: #87bfff !important;
+}
+.user-dropdown-email {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+.user-dropdown-balance h6 {
+    color: #6783b8 !important;
+}
+.user-dropdown-balance h3 {
+    color: white !important;
+}
+.user-dropdown-balance ul li {
+    color: #9eaecf !important;
+}
+.user-dropdown-links li a {
+    color: #6783b8 !important;
+}
+.user-dropdown-links li a:hover,
+.user-dropdown-links li.active a {
+    color: #2b56f5 !important;
+}
+.user-name {
+    color: white !important;
+}
+.user-uid {
+    color: #6783b8 !important;
+}
+.user-uid span {
+    color: white !important;
+}
+.user-icon-nav li a {
+    color: #6783b8 !important;
+}
+.user-icon-nav li a .ti, 
+.user-icon-nav li a .icofont, 
+.user-icon-nav li a [class*=fa-] {
+    color: #2b56f5 !important;
+}
+.user-icon-nav li.active a,
+.user-icon-nav li:hover a,
+.user-icon-nav li:focus a {
+    color: #2b56f5 !important;
+}
+.user-nav li {
+    color: #6783b8 !important;
+}
+.user-nav li a,
+.user-nav li.active a {
+    color: #6783b8 !important;
+}
+.user-nav li a:hover {
+    color: #2b56f5 !important;
+}
+.user-nav li span {
+    color: white !important;
+}
+.tile-item {
+    color: #fff !important;
+    background-color: #2b56f5 !important;
+}
+.tile-bubbles {
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+.tile-bubbles:before {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+.tile-bubbles:after {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+  
