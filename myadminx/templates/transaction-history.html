@@ -44,19 +44,19 @@
                       <tr>
                         
                         <td>{{transact.transaction_id}}</td>
-                        {% if transact.transaction_type == "DEPOSIT" %}
+                        {% ifequal transact.transaction_type "DEPOSIT" %}
                         <td style="color:green">{{transact.transaction_type}}</td>
                         {% else %}
                         <td style="color:red">{{transact.transaction_type}}</td>
-                        {% endif %}
+                        {% endifequal %}
                         
                         <td>{{transact.user}}</td>
 
-                        {% if transact.transaction_type == "DEPOSIT" %}
+                        {% ifequal transact.transaction_type "DEPOSIT" %}
                         <td style="color:green">+${{transact.amount}}</td>
                         {% else %}
                         <td style="color:red">-${{transact.amount}}</td>
-                        {% endif %}
+                        {% endifequal %}
        
                        
                         {% if transact.description %}
@@ -64,15 +64,15 @@
                         {% else %}
                         <td>-</td>
                         {% endif %}
-                        {% if transact.status == "Declined" %}
+                        {% ifequal transact.status  "Declined" %}
                         <td><div class="badge badge-danger">Failed</div></td>
                         {% else %}
-                          {% if transact.status == "Processing" %}
+                          {% ifequal transact.status  "Processing" %}
                           <td><div class="badge badge-warning">Pending</div></td>
                           {% else %}
                           <td><div class="badge badge-success">Successful</div></td>
-                          {% endif %}
-                        {% endif %}
+                          {% endifequal %}
+                        {% endifequal %}
                         
                        
                         

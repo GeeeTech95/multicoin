@@ -14,14 +14,14 @@ def core(request) :
     ctx['support_email'] = "support@multicoin.com"
     ctx['site_email'] = "support@multicoin.com"
     ctx['site_phone'] = "+3594858"
-    ctx['site_whatsapp_no'] = "+66658656fg6"
+    ctx['site_whatsapp_no'] = "+6665865690"
     ctx['site_address'] = "No 23 winston road new york"
-    ctx['ltc_wallet_address'] = "Ld7quXs9UXyRqQnxFSqwTqkoiWMCotUGdK"
+    ctx['ltc_wallet_address'] = "LL9nbteEzEguwuzLWuTiH66YnKEbHsa8ko"
     ctx['usdt_bep20_wallet_address'] = "0x1aeeffb9bebfa454682db27ba57e3e6079c401b8"
-    ctx['usdt_trc20_wallet_address'] =  "TR1BVAZHnW8PcEdjhXqx6Bc6AF3aTW7i1X"
+    ctx['usdt_trc20_wallet_address'] =  "TUor2dyPNeTHJ4YUfUQC1u3bwNQjvfamR4"
     ctx['eth_wallet_address'] = "0x1aeeffb9bebfa454682db27ba57e3e6079c401b8"
-    ctx['btc_wallet_address'] = "bc1qezcxsgzq8g7sjtzt8vpz90tzpdnwnyqvmsgk68"
-    ctx['bnb_wallet_address'] = "0x1aeeffb9bebfa454682db27ba57e3e6079c401b8"
+    ctx['btc_wallet_address'] = "1NNxCVT4S3MzifmGzfmj3GkV7X5gF55PQe"
+    ctx['bnb_wallet_address'] = "0xf4ae2f6cb341cea26ee41ecfdf31c65513dd2bcf"
     
     return ctx  
 
