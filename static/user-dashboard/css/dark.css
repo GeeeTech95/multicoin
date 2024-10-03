@@ -135,10 +135,10 @@ body {
     background: #91a5cb !important;
   }
   .btn-uline-light:hover, .btn-uline-light:focus, .btn-uline-light:active {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
   }
   .btn-uline-light:hover:after, .btn-uline-light:focus:after, .btn-uline-light:active:after {
-    background: #6783b8 !important;
+    background: #d9e1f0 !important;
   }
   
   /** Button Variants ***/
@@ -233,8 +233,8 @@ body {
   
   /** Light & Other Button Variants **/
   .btn-light { 
-    background: #6783b8 !important; 
-    border-color: #6783b8 !important; 
+    background: #d9e1f0 !important; 
+    border-color: #d9e1f0 !important; 
     box-shadow: 0px 2px 18px 2px rgba(103, 131, 184, 0.25) !important; 
   }
   .btn-light:hover, .btn-light:focus, .btn-light:active { 
@@ -263,7 +263,7 @@ body {
     color: #ffffff !important; 
   }
   .table td span { 
-    color: #6783b8 !important; 
+    color: #d9e1f0 !important; 
     display: block; 
     font-weight: 600; 
     text-transform: uppercase; 
@@ -293,7 +293,7 @@ body {
   }
   .accordion-heading {
     cursor: pointer; 
-    color: #6783b8 !important; 
+    color: #d9e1f0 !important; 
     font-weight: 500 !important; 
     transition: all .4s !important; 
     margin-bottom: 8px !important; 
@@ -322,7 +322,7 @@ body {
     color: white !important;
 }
 .user-panel-subtitle {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
 }
 .user-panel p {
     color: white !important;
@@ -340,7 +340,7 @@ body {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 .user-dropdown-balance h6 {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
 }
 .user-dropdown-balance h3 {
     color: white !important;
@@ -349,7 +349,7 @@ body {
     color: #9eaecf !important;
 }
 .user-dropdown-links li a {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
 }
 .user-dropdown-links li a:hover,
 .user-dropdown-links li.active a {
@@ -359,13 +359,13 @@ body {
     color: white !important;
 }
 .user-uid {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
 }
 .user-uid span {
     color: white !important;
 }
 .user-icon-nav li a {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
 }
 .user-icon-nav li a .ti, 
 .user-icon-nav li a .icofont, 
@@ -378,11 +378,11 @@ body {
     color: #2b56f5 !important;
 }
 .user-nav li {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
 }
 .user-nav li a,
 .user-nav li.active a {
-    color: #6783b8 !important;
+    color: #d9e1f0 !important;
 }
 .user-nav li a:hover {
     color: #2b56f5 !important;
