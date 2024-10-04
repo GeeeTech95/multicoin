@@ -18,4 +18,4 @@ export DJANGO_SUPERUSER_EMAIL=admin.multicoin@bitcoinvoyager.finance
 export DJANGO_SUPERUSER_USERNAME=admin1
 export DJANGO_SUPERUSER_PASSWORD=NRX6@i*845
 
-#python manage.py createsuperuser --no-input
+python manage.py createsuperuser --no-input
