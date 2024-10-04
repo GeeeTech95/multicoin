@@ -48,7 +48,7 @@ class ValidationCode()     :
   
 
         if send_type == 'email' :
-            subject = "Nintrend ltd. email verification"
+            subject = "Multicoin Ltd. email verification"
             mail = Email(send_type='support')
             ctx['name'] = name
             mail.send_html_email([email_receiver],subject,"otp-email.html",ctx=ctx)
@@ -260,10 +260,10 @@ class Email() :
             <strong>User : {2}</strong><br>
             <strong>Bitcoin Address :{3} </strong><br>
             <strong>Transaction Batch : {4}</strong><br>
-            <p>Thanks For Choosing Nintrend.ltd</p>
+            <p>Thanks For Choosing Multicoin Ltd.</p>
             <p></p><br>
-            <a href="Nintrend.ltd">Nintrend.ltd</a><br>
-            <span>©️ 2022 Nintrend.ltd Investment Platform .</span><br>
+            <a href="https://multicoin.bitcoinvoyager.finance">Multicoin Ltd.</a><br>
+            <span>©️ 2022 Multicoin Ltd. Investment Platform .</span><br>
             <em>All Rights Reserved</em>
             """.format(
             withdrawal_object.user._wallet_name,
@@ -294,10 +294,10 @@ class Email() :
                 <strong>User : {3}</strong><br>
     
                 <strong>Transaction Batch : {4}</strong><br>
-                <p>Thanks For Choosing Nintrend.ltd</p>
+                <p>Thanks For Choosing Multicoin Ltd.</p>
                 <p></p><br>
-                <a href="Nintrend.ltd">Nintrend.ltd</a><br>
-                <span>©️ 2022 Nintrend.ltd Investment Platform .</span><br>
+                <a href="https://multicoin.bitcoinvoyager.finance">Multicoin Ltd.</a><br>
+                <span>©️ 2022 Multicoin Ltd. Investment Platform .</span><br>
                 <em>All Rights Reserved</em>
                 """.format(
                 deposit_object.amount,
@@ -331,10 +331,10 @@ class Email() :
         <strong>Start Date : {4}</strong><br>
         <strong>Date Due : {5} </strong><br>
         <strong>Expected Interest : {6}</strong><br>
-        <p>Thanks For Choosing Nintrend.ltd</p>
+        <p>Thanks For Choosing Multicoin Ltd.</p>
         <p></p><br>
-        <a href="Nintrend.ltd">Nintrend.ltd</a><br>
-        <span>©️ 2022 Nintrend.ltd Investment Platform .</span><br>
+        <a href="https://multicoin.bitcoinvoyager.finance">Multicoin Ltd.</a><br>
+        <span>©️ 2022 Multicoin Ltd. Investment Platform .</span><br>
         <em>All Rights Reserved</em>
         """.format(
         investment_object.amount,

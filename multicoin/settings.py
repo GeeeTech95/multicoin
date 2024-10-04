@@ -19,13 +19,13 @@ ALLOWED_HOSTS = ['*']
 
 JAZZMIN_SETTINGS = {
     # title of the window (Will default to current_admin_site.site_title if absent or None)
-    "site_title": "Bulligon Signals Admin",
+    "site_title": "Multicoin Admin",
 
     # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_header": "Bulligon Signals",
+    "site_header": "Multicoin",
 
     # Title on the brand (19 chars max) (defaults to current_admin_site.site_header if absent or None)
-    "site_brand": "Bulligon Signals",
+    "site_brand": "Multicoin",
 
     # Logo to use for your site, must be present in static files, used for brand on top left
     "site_logo": "img/logo/logo-name.png",
@@ -48,14 +48,14 @@ JAZZMIN_SETTINGS = {
     "welcome_sign": "Welcome Admin!",
 
     # Copyright on the footer
-    "copyright": "Bulligon Signals",
+    "copyright": "Multicoin",
 }
 
 
 # Application definition
 
 INSTALLED_APPS = [
-            'jazzmin',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -208,22 +208,21 @@ STATIC_URL = '/static/'
 EMAIL_HOST  = "smtp.zoho.com"
 EMAIL_PORT = "587"
 #for other emails 
-EMAIL_HOST_USER = "support@multicoin.ltd"
-DEFAULT_FROM_EMAIL  = "support@multicoin.ltd"
-EMAIL_HOST_PASSWORD = '#@Kyletech99'
-EMAIL_HOST_USER_ALERT = "transaction@multicoin.ltd"
-EMAIL_HOST_USER_SUPPORT = "support@multicoin.ltd"
+EMAIL_HOST_USER = "multicoin@bitcoinvoyager.finance"
+DEFAULT_FROM_EMAIL  = "multicoin@bitcoinvoyager.finance"
+EMAIL_HOST_PASSWORD = 'Y6li9p@Poko'
+EMAIL_HOST_USER_ALERT = "multicoin@bitcoinvoyager.finance"
+EMAIL_HOST_USER_SUPPORT = "multicoin@bitcoinvoyager.finance"
 
-#GODADDY and tawkto
-#username : hmdzhamad3@gmail.com
-#email :hmdzhamad3@gmail.com
-#password : racpaxx44
+#TAWKTO
+#Email : multicoin@bitcoinvoyager.finance
+#password : Y6li9p@Poko
 
 
 EMAIL_USE_TLS = "True"
 
 SITE_NAME = "multicoin LTD."
-SITE_ADDRESS = "https://www.multicoin.ltd/"
+SITE_ADDRESS = "https://multicoin.bitcoinvoyager.finance/"
 
 FREE_PLAN_DURATION = 2  #in days
 SUBSCRIPTION_DURATION = 365   #in days

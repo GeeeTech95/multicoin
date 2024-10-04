@@ -2,25 +2,42 @@
 
 <!DOCTYPE html>
 <html lang="zxx" class="js">
+
 <head>
-	<meta charset="utf-8">
-	<meta name="author" content="Softnio">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="making digital currency investments easier and safer">
-	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
-	<!-- Site Title  -->
-	<title>{{site_name}} | Account dashboard</title>
-	<!-- Vendor Bundle CSS -->
-	<link rel="stylesheet" href="{% static 'user-dashboard/css/vendor.bundle.css' %}?ver=101">
-	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="{% static 'user-dashboard/css/style.css' %}?ver=101">
+    <meta charset="utf-8">
+    <meta name="author" content="Softnio">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="making digital currency investments easier and safer">
+    <!-- Fav Icon  -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}">
+    <!-- Site Title  -->
+    <title>{{site_name}} | Account dashboard</title>
+    <!-- Vendor Bundle CSS -->
+    <link rel="stylesheet" href="{% static 'user-dashboard/css/vendor.bundle.css' %}?ver=101">
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'user-dashboard/css/style.css' %}?ver=101">
     <link rel="stylesheet" href="{% static 'user-dashboard/css/dark.css' %}?ver=101">
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/6700131c37379df10df1e279/1i9c4lam5';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
 </head>
 
 <body class="user-dashboard">
-    
-    
+
+
     <div class="topbar">
         <div class="topbar-md d-lg-none">
             <div class="container">
@@ -36,13 +53,15 @@
 
                     <div class="site-logo">
                         <a href="{% url 'index' %}" class="site-brand">
-                            <img style="height:41px;width:160px" src="{% static 'img/logo.png' %}" alt="logo" srcset="{% static 'img/logo.png' %} 2x">
+                            <img style="height:41px;width:160px" src="{% static 'images/logo.png' %}" alt="logo"
+                                srcset="{% static 'img/logo.png' %} 2x">
                         </a>
                     </div><!-- .site-logo -->
-                    
+
                     <div class="dropdown topbar-action-item topbar-action-user">
                         {% if user.get_picture %}
-                        <a href="#" data-toggle="dropdown"> <img class="icon" src="{{user.get_picture}}" alt="thumb"> </a>
+                        <a href="#" data-toggle="dropdown"> <img class="icon" src="{{user.get_picture}}" alt="thumb">
+                        </a>
                         {% endif %}
                         <div class="dropdown-menu dropdown-menu-right">
                             <div class="user-dropdown">
@@ -50,8 +69,8 @@
                                     <h6 class="user-dropdown-name">{{user.name}} <span>({{user.unique_id}})</span></h6>
                                     <span class="user-dropdown-email">{{user.email}}</span>
                                 </div>
-        
-                                
+
+
                                 <ul class="user-dropdown-links">
                                     <li><a href="{% url 'logout' %}"><i class="ti ti-power-off"></i>Logout</a></li>
                                 </ul>
@@ -67,7 +86,8 @@
                 <div class="topbar-lg d-none d-lg-block">
                     <div class="site-logo">
                         <a href="{% url 'index' %}" class="site-brand">
-                            <img style="height:41px;width:160px" src="{% static 'images/logo.png' %}" alt="logo" srcset="{% static 'images/logo.png' %} 2x">
+                            <img style="height:41px;width:160px" src="{% static 'images/logo.png' %}" alt="logo"
+                                srcset="{% static 'images/logo.png' %} 2x">
                         </a>
                     </div><!-- .site-logo -->
                 </div><!-- .topbar-lg -->
@@ -87,15 +107,17 @@
 
                         <li class="dropdown topbar-action-item topbar-action-user">
                             {% if user.get_picture %}
-                            <a href="#" data-toggle="dropdown" > <img class="icon" src="{{user.get_picture}}" alt="thumb"> </a>
+                            <a href="#" data-toggle="dropdown"> <img class="icon" src="{{user.get_picture}}"
+                                    alt="thumb"> </a>
                             {% endif %}
                             <div class="dropdown-menu dropdown-menu-right">
                                 <div class="user-dropdown">
                                     <div class="user-dropdown-head">
-                                        <h6 class="user-dropdown-name">{{user.name}} <span>({{user.unique_id}})</span></h6>
+                                        <h6 class="user-dropdown-name">{{user.name}} <span>({{user.unique_id}})</span>
+                                        </h6>
                                         <span class="user-dropdown-email">{{user.email}}</span>
                                     </div>
-                                   
+
                                     <ul class="user-dropdown-links">
                                         <li><a href="{% url 'logout' %}"><i class="ti ti-power-off"></i>Logout</a></li>
                                     </ul>
@@ -108,8 +130,8 @@
         </div><!-- .container -->
     </div>
     <!-- TopBar End -->
-    
-    
+
+
     <div class="user-wraper">
         <div class="container">
             <div class="d-flex">
@@ -117,7 +139,7 @@
                     <div class="user-sidebar-overlay"></div>
                     <div class="user-box d-none d-lg-block">
                         <div class="user-image">
-                       
+
                         </div>
                         <h6 class="user-name">Welcome {{user.name}}!</h6>
                         <div class="user-uid">Unique ID: <span>{{user.unique_id}}</span></div>
@@ -130,13 +152,14 @@
                     </div><!-- .user-box -->
                     <ul class="user-icon-nav">
                         <li><a href="{% url 'dashboard' %}"><em class="ti ti-dashboard"></em>Dashboard</a></li>
-                        
-                      
-                        <li><a href="{% url 'transaction' %}"><em class="ti ti-control-shuffle"></em>Transactions</a></li>
+
+
+                        <li><a href="{% url 'transaction' %}"><em class="ti ti-control-shuffle"></em>Transactions</a>
+                        </li>
                         <li><a href="{% url 'referral' %}"><em class="ti ti-infinite"></em>Referral</a></li>
                         <li><a href="{% url 'profile' %}"><em class="ti ti-user"></em>Account</a></li>
                         <li><a href="{% url 'setting' %}"><em class="ti ti-lock"></em>Account Settings</a></li>
-                        
+
                     </ul><!-- .user-icon-nav -->
                     <div class="user-sidebar-sap"></div><!-- .user-sidebar-sap -->
                     <ul class="user-nav">
@@ -164,8 +187,8 @@
                         </ul><!-- .topbar-action-list -->
                     </div>
                 </div><!-- .user-sidebar -->
-                
-                  {% block content %} {% endblock %}
+
+                {% block content %} {% endblock %}
             </div><!-- .d-flex -->
         </div><!-- .container -->
     </div>
@@ -173,23 +196,25 @@
 
     {% if messages %}
     {% for message in messages %}
-     <div class="alert alert-info alert-dismissible show fade" style="background-color:{{main_theme}};margin:20px;z-index:2000;width:90%;top:50px;position:absolute" >
-       <div class="alert-body">
-         <button class="close" data-dismiss="alert">
-           <span>&times;</span>
-         </button>
-         {{message}}
-       </div>
-     </div>
-     {% endfor %}
-     {% endif %}
-    
-    
+    <div class="alert alert-info alert-dismissible show fade"
+        style="background-color:{{main_theme}};margin:20px;z-index:2000;width:90%;top:50px;position:absolute">
+        <div class="alert-body">
+            <button class="close" data-dismiss="alert">
+                <span>&times;</span>
+            </button>
+            {{message}}
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+
     <div class="footer-bar">
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
-                    <span class="footer-copyright">Copyright 2012 - 2022, <a href="#">{{site_name}} ltd.</a>.  All Rights Reserved.</span>
+                    <span class="footer-copyright">Copyright 2012 - 2022, <a href="#">{{site_name}} ltd.</a>. All Rights
+                        Reserved.</span>
                 </div><!-- .col -->
                 <!--div class="col-md-5 text-md-right">
                     <ul class="footer-links">
@@ -201,20 +226,20 @@
         </div><!-- .container -->
     </div>
     <!-- FooterBar End -->
-    
-    
-	<!-- JavaScript (include all script here) -->
-	<script src="{% static 'user-dashboard/js/jquery.bundle.js' %}"?ver=101"></script>
-	<script src="{% static 'user-dashboard/js/script.js' %}"?ver=101"></script>
+
+
+    <!-- JavaScript (include all script here) -->
+    <script src="{% static 'user-dashboard/js/jquery.bundle.js' %}" ?ver=101"></script>
+    <script src="{% static 'user-dashboard/js/script.js' %}" ?ver=101"></script>
     <script src="{% static 'user-dashboard/js/helper.js' %}"></script>
     <script>
-        $(".close").click(function(){
-         
-            $(".alert").attr("hidden","")
-        }
-        )
+        $(".close").click(function () {
+
+            $(".alert").attr("hidden", "")
+        })
     </script>
 
     {% block js %}{% endblock %}
 </body>
+
 </html>
